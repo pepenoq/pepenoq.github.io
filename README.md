@@ -101,24 +101,8 @@ and rationales visible) or return to **all exams**.
 
 ## About the source material
 
-Questions were written from the **Week 7 "The Infant" unit** materials provided in
-`useruploads/`, and are intended to reinforce that content.
+Questions were written from the **Week 7 "The Infant" unit** materials provided on Blackboard, and are intended to reinforce that content.
 
-**Sourcing / how the textbook was used as the backbone:** The supplied textbook PDFs
-(e.g., `770-789.pdf`, `1148-1157.pdf`, `958-961.pdf`) are **scanned images** — their
-embedded text layer is corrupt (every glyph decodes to `\x01`), so it could not be read
-directly. To honor the requirement that the **textbook be the backbone**, the 18 textbook
-reading PDFs were **OCR'd locally** (`pdftoppm` render → `tesseract` OCR) into plain-text
-files under `useruploads/ocr/`. Those OCR transcripts were then used to verify and anchor
-the quantitative and qualitative facts in the questions (growth/weight/length patterns,
-Erikson/Piaget stages, the immunization schedule, DDH/clubfoot exam and treatment,
-pyloric-stenosis findings, congenital-heart classifications, etc.). The PowerPoint speaker
-notes (`infantnotes.txt`) were used as **supporting** material; where the two could differ,
-the OCR'd textbook was treated as authoritative.
-
-The OCR text files remain in `useruploads/ocr/` for reference. If you spot any wording you
-want reconciled more tightly to a specific textbook page, point to the page and the
-matching question can be adjusted.
 
 ---
 
