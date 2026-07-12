@@ -5,7 +5,7 @@
   "use strict";
 
   var DATA = (window.EXAM_DATA && window.EXAM_DATA.questions) || [];
-  var EXAMS = [1, 2, 3, 4, 5, 6];
+  var EXAMS = [1, 2, 3, 4, 5, 6, 7];
   var PASS = 75; // % considered passing (typical nursing benchmark)
   var STORE_KEY = "peds_practice_v1";
 
