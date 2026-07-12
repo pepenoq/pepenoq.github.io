@@ -4,6 +4,9 @@ A local, offline web app for practicing **Paediatrics (The Infant unit)** questi
 NCLEX/HESI format. Runs entirely in your web browser on **Windows and macOS** — no
 internet, no installation, no accounts.
 
+## Internet Direct Access link:
+[https://pepenoq.github.io](https://pepenoq.github.io/)
+
 ---
 
 ## What's included
