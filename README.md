@@ -8,7 +8,7 @@ internet, no installation, no accounts.
 
 ## What's included
 
-- **300 questions** total, split into **six 50-question practice exams**.
+- **320 questions** total: **six 50-question practice exams** plus a **20-question dosage-calculation test**.
 - **Exams 1–4** each **mix every topic** in the unit (newborn adaptation, growth & development,
   congenital heart defects, respiratory & GI disorders, immunizations, safety, etc.) —
   these exams are *not* organized by topic.
@@ -25,6 +25,12 @@ internet, no installation, no accounts.
   and covers the conditions the other drugs treat (RDS, neonatal sepsis, HSV, prematurity, newborn
   nursery care); drug-specific nursing detail is drawn from established NCLEX pharmacology grounded
   in those covered conditions.
+- **Exam 7** is a **20-question Pediatric Medication & Fluid Calculation practice test** in NCLEX
+  **fill-in-the-blank** format (type the numeric answer; it is graded within a small tolerance for
+  rounding). It covers weight conversion, weight-based (mg/kg/day) divided dosing, dose-to-volume,
+  safe-dose range, IV maintenance fluids by **both the 4/2/1 rule (mL/hr) and the 100/50/20
+  Holliday–Segar rule (mL/day)**, and IV drip rates (gtt/min). These are calculation drills using
+  standard pediatric dosing method — confirm any institution-specific rounding rules.
 - Question formats: **Multiple Choice** and **Select All That Apply (SATA)**. The format
   is clearly labeled with a badge on every question, and SATA questions show a reminder
   that more than one answer may be correct.
@@ -70,14 +76,14 @@ That's it. Choose a practice exam from the landing screen and begin.
 |------|---------|
 | `index.html` | The app shell — landing screen, quiz screen, results screen, and all styling. |
 | `app.js` | The quiz engine — rendering, grading, navigation, rationale display, scoring, and progress persistence. |
-| `questions.js` | The 300-question bank (data only). Each question has a stem, options, correct answer(s), topic, format, and rationale. |
+| `questions.js` | The 320-question bank (data only). Each question has a stem, options, correct answer(s), topic, format, and rationale. |
 | `README.md` | This file. |
 
 ---
 
 ## How to use each screen
 
-**Landing screen** — pick one of the six exam cards. Cards show your progress and let you
+**Landing screen** — pick one of the seven exam cards. Cards show your progress and let you
 resume or reset.
 
 **Quiz screen**

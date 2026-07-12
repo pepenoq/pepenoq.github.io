@@ -120,6 +120,7 @@
   .badge{font-size:.72rem;font-weight:700;letter-spacing:.4px;padding:4px 11px;border-radius:999px;text-transform:uppercase}
   .badge.type-mcq{background:#0e2a44;color:#7cc0ff;border:1px solid #1d4e7a}
   .badge.type-sata{background:#3a2a0e;color:var(--amber);border:1px solid #6b4e14}
+  .badge.type-fill{background:#10303a;color:#7fe0d0;border:1px solid #1d6b5e}
   .badge.topic{background:#1a2430;color:var(--muted);border:1px solid var(--line)}
   .sata-hint{color:var(--amber);font-size:.82rem;margin:-6px 0 14px;font-weight:600}
 
@@ -144,6 +145,19 @@
   .opt.locked:hover{border-color:var(--line)}
   .opt.locked.correct:hover{border-color:var(--green)}
   .opt.locked.incorrect:hover{border-color:var(--red)}
+
+  .fill-group{display:flex;align-items:center;gap:12px;margin-top:4px;flex-wrap:wrap}
+  .fill-input{
+    width:220px;max-width:70%;font-size:1.1rem;font-weight:600;letter-spacing:.3px;
+    padding:13px 15px;border-radius:12px;border:1px solid var(--line);
+    background:#0f1a26;color:var(--ink);
+  }
+  .fill-input::placeholder{color:var(--muted);font-weight:400}
+  .fill-input:focus{outline:none;border-color:var(--brand)}
+  .fill-input:disabled{opacity:1}
+  .fill-input.correct{border-color:var(--green);background:var(--green-bg);color:#bff0d0}
+  .fill-input.incorrect{border-color:var(--red);background:var(--red-bg);color:#ffc9c9}
+  .fill-unit{color:var(--muted);font-size:1rem;font-weight:700}
 
   .rationale{
     margin-top:18px;border-radius:12px;padding:16px 18px;border:1px solid var(--line);
@@ -220,13 +234,14 @@
   <section id="landing">
     <div class="lead">
       <h2>Choose a practice exam</h2>
-      <p>Six 50-question exams drawn from a 300-question bank. Exams 1–4 each mix every
-         topic from the Infant unit — newborn adaptation, growth &amp; development, congenital
-         defects, respiratory &amp; GI disorders, immunizations, safety, and more. Exam 5 is a
-         focused exam on <strong>developmental milestones</strong> and <strong>vaccination
-         schedules</strong>, and Exam 6 is a focused exam on <strong>neonatal/infant
-         medications</strong> (10 key drugs). Questions are written at a
-         <strong>challenging</strong> level appropriate for the Maternity/Paediatrics semester.</p>
+      <p>Six 50-question exams plus a 20-question dosage-calculation test (320 questions total).
+         Exams 1–4 each mix every topic from the Infant unit — newborn adaptation, growth &amp;
+         development, congenital defects, respiratory &amp; GI disorders, immunizations, safety, and
+         more. Exam 5 focuses on <strong>developmental milestones</strong> and <strong>vaccination
+         schedules</strong>, Exam 6 on <strong>neonatal/infant medications</strong> (10 key drugs),
+         and Exam 7 is a <strong>pediatric medication &amp; IV-fluid calculation</strong> practice
+         test (fill-in-the-blank). Questions are written at a <strong>challenging</strong> level
+         appropriate for the Maternity/Paediatrics semester.</p>
       <span class="pill">MULTIPLE CHOICE &amp; SELECT ALL THAT APPLY · RATIONALES INCLUDED</span>
     </div>
     <div class="grid" id="examGrid"><!-- cards injected --></div>

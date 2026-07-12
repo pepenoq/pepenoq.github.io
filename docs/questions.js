@@ -1,6 +1,7 @@
 /* ============================================================================
    Paediatrics Practice — Question Bank (The Infant unit)
-   300 NCLEX/HESI-style questions · six mixed/themed 50-question exams.
+   320 NCLEX/HESI-style questions · six 50-question exams + one 20-question
+   dosage-calculation practice test.
 
    Sources: Week 7 Infant reading (textbook, OCR-verified) reinforced as the
    backbone, with the lecture speaker notes as supporting material. Difficulty
@@ -22,12 +23,20 @@
    nursing detail is from established NCLEX pharmacology grounded in those
    covered conditions.
 
+   Exam 7 is a 20-question Pediatric Medication/Fluid Calculation practice test
+   following NCLEX fill-in-the-blank format: weight conversion, weight-based
+   (mg/kg/day) divided dosing, dose-to-volume, safe-dose range, IV maintenance
+   fluids by BOTH the 4/2/1 rule (mL/hr) and the 100/50/20 Holliday-Segar rule
+   (mL/day), and IV drip rates. These are calculation drills grounded in
+   standard pediatric dosing method; verify institution-specific rounding rules.
+
    Question object:
-     { id, exam(1-6), topic, type("mcq"|"sata"), stem, options[], correct[idx], rationale }
+     mcq/sata: { id, exam(1-7), topic, type("mcq"|"sata"), stem, options[], correct[idx], rationale }
+     fill:     { id, exam:7, topic, type:"fill", stem, answer(number), tolerance, unit, rationale }
    For MCQ, correct has exactly one index. For SATA, one or more.
    ========================================================================== */
 window.EXAM_DATA = {
-  meta: { title: "Paediatrics Practice — The Infant", total: 300, exams: 6 },
+  meta: { title: "Paediatrics Practice — The Infant", total: 320, exams: 7 },
   questions: [
 
   /* =====================  PRACTICE EXAM 1  ===================== */
@@ -1854,7 +1863,95 @@ window.EXAM_DATA = {
     stem:"A nurse is teaching parents how to safely administer digoxin to their infant at home. Which instructions should the nurse include? Select all that apply.",
     options:["Count the apical heart rate for one full minute before each dose","Do not give a double dose if a dose is missed","Report vomiting, poor feeding, or a slow heart rate, which may indicate toxicity","If the infant vomits the dose, do not give a replacement dose","Add the medication to the infant's full bottle of formula to make it easier to give"],
     correct:[0,1,2,3],
-    rationale:"Safe digoxin teaching: count the apical pulse for a full minute before each dose (withhold for bradycardia), never double a missed dose, report signs of toxicity (vomiting, poor feeding, slow heart rate), and do not re-dose if the infant vomits. Digoxin should NOT be mixed into a full bottle of formula — if the infant does not finish it, the full dose is not received, and it should be given directly and consistently instead." }
+    rationale:"Safe digoxin teaching: count the apical pulse for a full minute before each dose (withhold for bradycardia), never double a missed dose, report signs of toxicity (vomiting, poor feeding, slow heart rate), and do not re-dose if the infant vomits. Digoxin should NOT be mixed into a full bottle of formula — if the infant does not finish it, the full dose is not received, and it should be given directly and consistently instead." },
+
+  /* =====================  PRACTICE EXAM 7  ===================== */
+  /* Pediatric Medication & Fluid Calculation practice test (NCLEX fill-in format).
+     Type "fill": the learner types a number; it is graded against `answer`
+     within +/- `tolerance` (to allow for legitimate rounding paths). `unit` is
+     shown next to the input and in the answer key. Conversions use 2.2 lb/kg
+     and 16 oz/lb. Maintenance fluids use the 4/2/1 rule (mL/hr) and the
+     100/50/20 Holliday-Segar rule (mL/day). */
+
+  { id:"e7q01", exam:7, topic:"Weight Conversion", type:"fill", unit:"kg", answer:7, tolerance:0.1,
+    stem:"An infant weighs 15 lb 8 oz. Convert this weight to kilograms. Round your answer to the nearest tenth. (Enter kg.)",
+    rationale:"Convert ounces to pounds: 8 oz / 16 oz per lb = 0.5 lb, so the infant weighs 15.5 lb. Then 15.5 lb / 2.2 lb per kg = 7.045 kg, which rounds to 7.0 kg. Always convert weight to kilograms before calculating a pediatric dose." },
+
+  { id:"e7q02", exam:7, topic:"Weight Conversion", type:"fill", unit:"kg", answer:20, tolerance:0.1,
+    stem:"A child weighs 44 lb. Convert this weight to kilograms. Round to the nearest tenth. (Enter kg.)",
+    rationale:"44 lb / 2.2 lb per kg = 20.0 kg. Pediatric medication and fluid calculations are weight-based, so converting pounds to kilograms is the essential first step." },
+
+  { id:"e7q03", exam:7, topic:"Weight-Based Dosing", type:"fill", unit:"mg", answer:36.9, tolerance:0.6,
+    stem:"Cefoxitin 20 mg/kg/day is ordered for an infant who weighs 12 lb 3 oz, given in divided doses every 8 hours (q8h). How many milligrams will you administer for EACH dose? Round to the nearest tenth. (Enter mg.)",
+    rationale:"Step 1 (weight): 3 oz / 16 = 0.1875 lb, so 12.1875 lb / 2.2 = 5.54 kg. Step 2 (daily dose): 20 mg/kg/day x 5.54 kg = 110.8 mg/day. Step 3 (per dose): q8h = 3 doses/day, so 110.8 / 3 = 36.9 mg per dose. (Rounding the weight to 5.5 kg first gives about 36.7 mg, which is also acceptable.)" },
+
+  { id:"e7q04", exam:7, topic:"Weight-Based Dosing", type:"fill", unit:"mg", answer:400, tolerance:1,
+    stem:"Amoxicillin 40 mg/kg/day PO is ordered in divided doses every 12 hours (q12h) for a child weighing 20 kg. How many milligrams will you give per dose? (Enter mg.)",
+    rationale:"Daily dose: 40 mg/kg/day x 20 kg = 800 mg/day. q12h = 2 doses/day, so 800 mg / 2 = 400 mg per dose." },
+
+  { id:"e7q05", exam:7, topic:"Dose-to-Volume (Liquid)", type:"fill", unit:"mL", answer:10.3, tolerance:0.2,
+    stem:"Acetaminophen 15 mg/kg/dose is ordered for a child who weighs 22 kg. The available liquid is 160 mg/5 mL. How many milliliters will you administer per dose? Round to the nearest tenth. (Enter mL.)",
+    rationale:"Ordered dose: 15 mg/kg x 22 kg = 330 mg. Using the concentration 160 mg/5 mL: (330 mg / 160 mg) x 5 mL = 10.3 mL (10.3125 rounded to the nearest tenth)." },
+
+  { id:"e7q06", exam:7, topic:"Dose-to-Volume (Liquid)", type:"fill", unit:"mL", answer:0.9, tolerance:0.05,
+    stem:"Morphine 0.1 mg/kg IV is ordered for a child weighing 18 kg. The available concentration is 2 mg/mL. How many milliliters will you administer? Round to the nearest tenth. (Enter mL.)",
+    rationale:"Ordered dose: 0.1 mg/kg x 18 kg = 1.8 mg. Volume: 1.8 mg / 2 mg/mL = 0.9 mL. Morphine is a high-alert medication, so an independent double-check is recommended." },
+
+  { id:"e7q07", exam:7, topic:"Weight-Based Dosing", type:"fill", unit:"mg", answer:106.5, tolerance:1.6,
+    stem:"Ampicillin 100 mg/kg/day IV is ordered in divided doses every 6 hours (q6h) for an infant weighing 9 lb 6 oz. How many milligrams will you administer per dose? Round to the nearest tenth. (Enter mg.)",
+    rationale:"Weight: 6 oz / 16 = 0.375 lb, so 9.375 lb / 2.2 = 4.26 kg. Daily dose: 100 mg/kg/day x 4.26 kg = 426.1 mg/day. q6h = 4 doses/day, so 426.1 / 4 = 106.5 mg per dose." },
+
+  { id:"e7q08", exam:7, topic:"Safe Dose Range", type:"fill", unit:"mg/day", answer:360, tolerance:1,
+    stem:"A medication's safe range is 6-12 mg/kg/day. A child weighs 30 kg and the provider orders 400 mg/day. What is the MAXIMUM safe dose in mg/day for this child? Round to the nearest whole number. (Enter mg/day.)",
+    rationale:"Maximum safe daily dose = 12 mg/kg/day x 30 kg = 360 mg/day. The ordered 400 mg/day EXCEEDS this maximum, so the dose is unsafe: hold it and clarify with the provider. (The minimum safe dose would be 6 x 30 = 180 mg/day.)" },
+
+  { id:"e7q09", exam:7, topic:"IV Maintenance Fluids (4/2/1)", type:"fill", unit:"mL/hr", answer:40, tolerance:0.5,
+    stem:"Using the 4/2/1 rule, calculate the hourly maintenance IV fluid rate for a child who weighs 10 kg. (Enter mL/hr.)",
+    rationale:"The 4/2/1 rule gives the rate directly in mL/hr: 4 mL/kg/hr for the first 10 kg. For a 10-kg child: 4 mL x 10 kg = 40 mL/hr. There is no weight above 10 kg, so nothing is added." },
+
+  { id:"e7q10", exam:7, topic:"IV Maintenance Fluids (100/50/20)", type:"fill", unit:"mL", answer:1000, tolerance:3,
+    stem:"Using the 100/50/20 rule (Holliday-Segar), calculate the TOTAL 24-hour maintenance fluid volume for a child who weighs 10 kg. (Enter mL.)",
+    rationale:"The 100/50/20 rule gives the volume in mL/day: 100 mL/kg/day for the first 10 kg. For a 10-kg child: 100 mL x 10 kg = 1,000 mL/day total." },
+
+  { id:"e7q11", exam:7, topic:"IV Maintenance Fluids (100/50/20)", type:"fill", unit:"mL/hr", answer:41.7, tolerance:0.4,
+    stem:"A 10-kg child is receiving maintenance IV fluids calculated by the 100/50/20 rule (1,000 mL over 24 hours). What is the hourly IV flow rate? Round to the nearest tenth. (Enter mL/hr.)",
+    rationale:"Convert the 24-hour volume to an hourly rate: 1,000 mL / 24 hr = 41.7 mL/hr (41.67 rounded to the nearest tenth). Note the 4/2/1 rule gives 40 mL/hr for the same child; the two rules are approximations that differ slightly." },
+
+  { id:"e7q12", exam:7, topic:"IV Maintenance Fluids (4/2/1)", type:"fill", unit:"mL/hr", answer:32, tolerance:0.5,
+    stem:"Using the 4/2/1 rule, calculate the hourly maintenance IV fluid rate for an infant who weighs 8 kg. (Enter mL/hr.)",
+    rationale:"For a weight of 8 kg (under 10 kg), use 4 mL/kg/hr: 4 mL x 8 kg = 32 mL/hr." },
+
+  { id:"e7q13", exam:7, topic:"IV Maintenance Fluids (4/2/1)", type:"fill", unit:"mL/hr", answer:66, tolerance:0.5,
+    stem:"Using the 4/2/1 rule, calculate the hourly maintenance IV fluid rate for a child who weighs 26 kg. (Enter mL/hr.)",
+    rationale:"Apply the tiers: first 10 kg = 4 mL/kg/hr = 40 mL/hr; next 10 kg (11-20) = 2 mL/kg/hr = 20 mL/hr; each kg above 20 = 1 mL/kg/hr, so 6 kg x 1 = 6 mL/hr. Total = 40 + 20 + 6 = 66 mL/hr." },
+
+  { id:"e7q14", exam:7, topic:"IV Maintenance Fluids (4/2/1)", type:"fill", unit:"mL", answer:1584, tolerance:5,
+    stem:"A 26-kg child is receiving maintenance IV fluids at 66 mL/hr (calculated by the 4/2/1 rule). What is the total 24-hour fluid volume? (Enter mL.)",
+    rationale:"Multiply the hourly rate by 24 hours: 66 mL/hr x 24 hr = 1,584 mL/day." },
+
+  { id:"e7q15", exam:7, topic:"IV Maintenance Fluids (100/50/20)", type:"fill", unit:"mL", answer:1250, tolerance:3,
+    stem:"Using the 100/50/20 rule, calculate the TOTAL 24-hour maintenance fluid volume for a child who weighs 15 kg. (Enter mL.)",
+    rationale:"Apply the tiers: first 10 kg = 100 mL/kg/day = 1,000 mL; next 5 kg (11-15) = 50 mL/kg/day = 5 x 50 = 250 mL. Total = 1,000 + 250 = 1,250 mL/day." },
+
+  { id:"e7q16", exam:7, topic:"IV Maintenance Fluids (100/50/20)", type:"fill", unit:"mL/hr", answer:52.1, tolerance:0.4,
+    stem:"A 15-kg child is receiving maintenance IV fluids of 1,250 mL over 24 hours (100/50/20 rule). What is the hourly IV flow rate? Round to the nearest tenth. (Enter mL/hr.)",
+    rationale:"1,250 mL / 24 hr = 52.1 mL/hr (52.08 rounded to the nearest tenth)." },
+
+  { id:"e7q17", exam:7, topic:"IV Maintenance Fluids (100/50/20)", type:"fill", unit:"mL", answer:1580, tolerance:4,
+    stem:"Using the 100/50/20 rule, calculate the TOTAL 24-hour maintenance fluid volume for a child who weighs 24 kg. (Enter mL.)",
+    rationale:"Apply the tiers: first 10 kg = 1,000 mL; next 10 kg = 50 mL/kg/day = 500 mL; each kg above 20 = 20 mL/kg/day, so 4 kg x 20 = 80 mL. Total = 1,000 + 500 + 80 = 1,580 mL/day." },
+
+  { id:"e7q18", exam:7, topic:"IV Flow Rate (gtt/min)", type:"fill", unit:"gtt/min", answer:125, tolerance:1,
+    stem:"An IV of 250 mL is to infuse over 2 hours using microdrip tubing with a drop factor of 60 gtt/mL. Calculate the flow rate in drops per minute. (Enter gtt/min.)",
+    rationale:"gtt/min = (total volume / total minutes) x drop factor = (250 mL / 120 min) x 60 gtt/mL = 125 gtt/min. With microdrip tubing (60 gtt/mL), the gtt/min always equals the mL/hr (here 125 mL/hr = 125 gtt/min)." },
+
+  { id:"e7q19", exam:7, topic:"IV Flow Rate (gtt/min)", type:"fill", unit:"gtt/min", answer:31, tolerance:0.7,
+    stem:"An IV of 500 mL is to infuse over 4 hours using tubing with a drop factor of 15 gtt/mL. Calculate the flow rate in drops per minute. Round to the nearest whole number. (Enter gtt/min.)",
+    rationale:"gtt/min = (500 mL / 240 min) x 15 gtt/mL = 31.25, which rounds to 31 gtt/min. Drops per minute are rounded to a whole number because a partial drop cannot be counted." },
+
+  { id:"e7q20", exam:7, topic:"Dose-to-Volume (Liquid)", type:"fill", unit:"mL", answer:0.48, tolerance:0.02,
+    stem:"Digoxin 8 mcg/kg/day is ordered in two divided doses (q12h) for an infant weighing 6 kg. The available concentration is 0.05 mg/mL. How many milliliters will you administer per dose? Round to the nearest hundredth. (Enter mL.)",
+    rationale:"Daily dose: 8 mcg/kg x 6 kg = 48 mcg/day; per dose (q12h = 2 doses): 48 / 2 = 24 mcg. Convert the concentration: 0.05 mg/mL = 50 mcg/mL. Volume: 24 mcg / 50 mcg/mL = 0.48 mL. Digoxin is a high-alert drug: verify the dose and the apical pulse before giving." }
 
   ]
 };
