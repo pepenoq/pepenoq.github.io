@@ -5,7 +5,7 @@
   "use strict";
 
   var DATA = (window.EXAM_DATA && window.EXAM_DATA.questions) || [];
-  var EXAMS = [1, 2, 3, 4, 5, 6, 7];
+  var EXAMS = [1, 2, 3, 4, 5, 6, 7, 8];
   var PASS = 75; // % considered passing (typical nursing benchmark)
   var STORE_KEY = "peds_practice_v1";
 
@@ -94,6 +94,9 @@
       }
       if (ex === 6) {
         card.appendChild(el("p", "meta", "Focused theme: Neonatal/Infant Medications (10 key drugs)"));
+      }
+      if (ex === 8) {
+        card.appendChild(el("p", "meta", "Focused theme: Priority Interventions (ABCs of Nursing)"));
       }
 
       if (answered > 0) {

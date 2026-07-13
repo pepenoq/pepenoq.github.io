@@ -31,12 +31,12 @@
    standard pediatric dosing method; verify institution-specific rounding rules.
 
    Question object:
-     mcq/sata: { id, exam(1-7), topic, type("mcq"|"sata"), stem, options[], correct[idx], rationale }
+     mcq/sata: { id, exam(1-8), topic, type("mcq"|"sata"), stem, options[], correct[idx], rationale }
      fill:     { id, exam:7, topic, type:"fill", stem, answer(number), tolerance, unit, rationale }
    For MCQ, correct has exactly one index. For SATA, one or more.
    ========================================================================== */
 window.EXAM_DATA = {
-  meta: { title: "Paediatrics Practice — The Infant", total: 320, exams: 7 },
+  meta: { title: "Paediatrics Practice — The Infant", total: 345, exams: 8 },
   questions: [
 
   /* =====================  PRACTICE EXAM 1  ===================== */
@@ -1951,7 +1951,166 @@ window.EXAM_DATA = {
 
   { id:"e7q20", exam:7, topic:"Dose-to-Volume (Liquid)", type:"fill", unit:"mL", answer:0.48, tolerance:0.02,
     stem:"Digoxin 8 mcg/kg/day is ordered in two divided doses (q12h) for an infant weighing 6 kg. The available concentration is 0.05 mg/mL. How many milliliters will you administer per dose? Round to the nearest hundredth. (Enter mL.)",
-    rationale:"Daily dose: 8 mcg/kg x 6 kg = 48 mcg/day; per dose (q12h = 2 doses): 48 / 2 = 24 mcg. Convert the concentration: 0.05 mg/mL = 50 mcg/mL. Volume: 24 mcg / 50 mcg/mL = 0.48 mL. Digoxin is a high-alert drug: verify the dose and the apical pulse before giving." }
+    rationale:"Daily dose: 8 mcg/kg x 6 kg = 48 mcg/day; per dose (q12h = 2 doses): 48 / 2 = 24 mcg. Convert the concentration: 0.05 mg/mL = 50 mcg/mL. Volume: 24 mcg / 50 mcg/mL = 0.48 mL. Digoxin is a high-alert drug: verify the dose and the apical pulse before giving." },
+
+  /* =====================  PRACTICE EXAM 8  ===================== */
+  /* Focused theme: Priority-Intervention questions using the ABCs of Nursing
+     (Airway > Breathing > Circulation, then safety/priority-setting). 25
+     NCLEX-style "what is the FIRST/priority action / which patient first"
+     items drawn from the infant-unit conditions covered in Exams 1-6
+     (epiglottitis, RSV/bronchiolitis, TEF/EA, cleft palate, choking, seizures,
+     apnea of prematurity, RDS, tetralogy hypercyanotic spells, digoxin/HF,
+     pyloric stenosis, shock/dehydration, central cyanosis). */
+
+  { id:"e8q01", exam:8, topic:"Airway Priority", type:"mcq",
+    stem:"A toddler is brought to the emergency department with a high fever, drooling, muffled voice, inspiratory stridor, and is sitting upright leaning forward (tripod position). Which nursing action is the PRIORITY?",
+    options:["Examine the throat with a tongue depressor to visualize the epiglottis","Keep the child calm and upright, avoid anything in the mouth, and prepare for possible emergency airway management","Place the child supine and begin chest physiotherapy","Obtain a throat culture and start oral antibiotics"],
+    correct:[1],
+    rationale:"This is a classic picture of epiglottitis, a life-threatening AIRWAY emergency. The priority is to keep the child calm and upright and to have emergency airway equipment ready (intubation/tracheostomy). Never inspect the throat with a tongue depressor or provoke the child — this can trigger laryngospasm and complete airway obstruction. Airway always comes first in the ABCs." },
+
+  { id:"e8q02", exam:8, topic:"Airway Priority", type:"mcq",
+    stem:"A newborn has excessive oral secretions, drooling, and coughs and becomes cyanotic with the first feeding. Esophageal atresia/tracheoesophageal fistula (EA/TEF) is suspected. What is the nurse's PRIORITY action?",
+    options:["Continue the feeding slowly to assess tolerance","Stop the feeding, keep the infant NPO, and suction secretions while positioning to protect the airway","Lay the infant flat and offer a pacifier","Increase the feeding volume to meet caloric needs"],
+    correct:[1],
+    rationale:"With EA/TEF, feedings and pooled secretions can be aspirated into the lungs, so the AIRWAY is the priority. Stop the feeding, keep the infant NPO, suction secretions, and elevate the head of the bed to reduce aspiration risk while awaiting surgical evaluation. Continuing or increasing feedings would worsen aspiration." },
+
+  { id:"e8q03", exam:8, topic:"Airway Priority", type:"mcq",
+    stem:"A responsive 8-month-old suddenly begins coughing while eating, then cannot cry or make sounds and appears to be choking. What is the nurse's PRIORITY intervention?",
+    options:["Perform a blind finger sweep of the mouth","Deliver 5 back blows followed by 5 chest thrusts","Perform abdominal thrusts (the Heimlich maneuver)","Begin rescue breaths immediately"],
+    correct:[1],
+    rationale:"For a responsive infant with a foreign-body airway obstruction, the priority is cycles of 5 back blows followed by 5 chest thrusts until the object is expelled or the infant becomes unresponsive. Abdominal thrusts are NOT used in infants (risk of organ injury), and blind finger sweeps can push the object deeper. Relieving the airway obstruction is the first priority." },
+
+  { id:"e8q04", exam:8, topic:"Airway Priority", type:"mcq",
+    stem:"A nurse is caring for an infant immediately after cleft palate repair. Which position best protects the airway?",
+    options:["Supine with the head flat","Side-lying or prone to facilitate drainage of secretions","Semi-Fowler with the neck hyperextended","Trendelenburg position"],
+    correct:[1],
+    rationale:"After cleft palate repair, placing the infant side-lying (or prone) allows oral secretions to drain and helps keep the airway clear, reducing aspiration risk. Nothing should be placed in the mouth (no oral suction, straws, or hard objects) to protect the suture line. Maintaining a clear airway is the priority in the early postoperative period." },
+
+  { id:"e8q05", exam:8, topic:"Airway Priority", type:"mcq",
+    stem:"An infant with RSV bronchiolitis has thick nasal congestion and is having difficulty feeding and breathing. Which nursing intervention is the PRIORITY?",
+    options:["Administer prophylactic antibiotics","Perform gentle nasal suctioning with saline drops, especially before feedings","Prop a bottle in the crib so the infant can feed independently","Restrict the infant's fluid intake"],
+    correct:[1],
+    rationale:"Infants are obligate nose breathers, so clearing the nares with saline and gentle suction (especially before feeding) directly improves the AIRWAY and work of breathing. RSV/bronchiolitis is viral, so antibiotics are not indicated; propping bottles risks aspiration; and fluids are generally maintained/encouraged (with careful monitoring) rather than restricted." },
+
+  { id:"e8q06", exam:8, topic:"Airway Priority", type:"mcq",
+    stem:"A nurse is clearing the airway of a newborn immediately after birth. Which technique is correct to protect the airway?",
+    options:["Suction the nose first, then the mouth","Suction the mouth first, then the nose","Stimulate the nares first to induce a strong gasp","Avoid suctioning to prevent stimulation"],
+    correct:[1],
+    rationale:"Suction the mouth before the nose ('M before N'). Suctioning the nose first can stimulate a reflexive gasp, causing the newborn to aspirate any secretions still in the mouth. Because newborns are obligate nose breathers, keeping the airway clear is essential, but the sequence matters for aspiration prevention." },
+
+  { id:"e8q07", exam:8, topic:"Airway Priority", type:"mcq",
+    stem:"An infant begins having a generalized seizure. What is the nurse's PRIORITY action?",
+    options:["Insert a padded tongue blade to prevent tongue biting","Firmly restrain the infant's arms and legs","Position the infant side-lying and ensure a patent airway; do not place anything in the mouth","Perform gastric lavage"],
+    correct:[2],
+    rationale:"During a seizure, protecting the AIRWAY is the priority: position the infant side-lying so secretions drain and the tongue does not occlude the airway, and never force objects into the mouth (risk of injury/obstruction). Do not restrain the infant (can cause injury). Ensuring airway patency and preventing aspiration take precedence." },
+
+  { id:"e8q08", exam:8, topic:"Airway Priority", type:"mcq",
+    stem:"A hospitalized infant with croup was stable but now has stridor AT REST, suprasternal retractions, and increasing restlessness. What is the nurse's PRIORITY action?",
+    options:["Document the findings and reassess in 1 hour","Notify the provider immediately and prepare to support the airway (e.g., nebulized epinephrine, possible intubation)","Offer oral fluids to soothe the throat","Set up a cool-mist humidifier and leave the room to let the infant rest"],
+    correct:[1],
+    rationale:"Stridor at rest with retractions and restlessness signals worsening upper-AIRWAY obstruction and impending respiratory compromise. The priority is immediate escalation — notify the provider and prepare airway support (nebulized epinephrine, corticosteroids, and possible intubation). Waiting, oral fluids, or leaving the infant unmonitored would be unsafe." },
+
+  { id:"e8q09", exam:8, topic:"Breathing Priority", type:"mcq",
+    stem:"A premature infant has an apneic episode lasting 25 seconds accompanied by bradycardia and oxygen desaturation. What is the nurse's FIRST action?",
+    options:["Begin chest compressions","Administer caffeine citrate","Provide gentle tactile stimulation","Prepare for immediate intubation"],
+    correct:[2],
+    rationale:"For apnea of prematurity, the first intervention is gentle tactile stimulation, which often ends the episode and restores breathing. If there is no response, escalate to positive-pressure ventilation. Caffeine is maintenance therapy (not the immediate action), and chest compressions/intubation are reserved for infants who do not respond to stimulation and ventilation." },
+
+  { id:"e8q10", exam:8, topic:"Breathing Priority", type:"mcq",
+    stem:"A preterm infant with respiratory distress syndrome (RDS) has increasing grunting, nasal flaring, retractions, and a rising oxygen requirement. What is the nurse's PRIORITY?",
+    options:["Restrict oxygen to prevent oxygen toxicity","Support oxygenation and ventilation and anticipate surfactant administration","Feed the infant to provide additional energy","Place the infant prone and dim the lights to reduce stimulation"],
+    correct:[1],
+    rationale:"Worsening BREATHING is the priority. RDS results from surfactant deficiency; the infant needs oxygenation/ventilatory support and, commonly, intratracheal surfactant. Oxygen is titrated (not withheld) to maintain adequate saturation. Feeding a tachypneic infant in distress risks aspiration, and comfort positioning does not address the failing gas exchange." },
+
+  { id:"e8q11", exam:8, topic:"Breathing Priority", type:"mcq",
+    stem:"A 2-hour-old newborn has a respiratory rate of 80, nasal flaring, grunting, and mild retractions. What is the nurse's PRIORITY action?",
+    options:["Administer oxygen as needed and continue close respiratory monitoring","Feed the newborn immediately to calm the crying","Place supine and swaddle tightly to limit movement","Delay all assessment until the newborn is 24 hours old"],
+    correct:[0],
+    rationale:"Signs of increased work of breathing (RR 80, flaring, grunting, retractions) make BREATHING the priority: provide oxygen as needed and monitor closely. Oral feeding is withheld when the respiratory rate is high (over ~60) because of aspiration risk. Supporting oxygenation and watching for deterioration comes before comfort measures or routine tasks." },
+
+  { id:"e8q12", exam:8, topic:"Breathing Priority", type:"sata",
+    stem:"An infant with bronchiolitis is being monitored for deterioration. Which findings indicate impending respiratory failure and require IMMEDIATE nursing intervention? Select all that apply.",
+    options:["Diminished or absent breath sounds","Lethargy and decreased responsiveness","Decreasing respiratory effort as the infant tires","Clear nasal drainage","Intermittent coughing"],
+    correct:[0,1,2],
+    rationale:"Diminished/absent breath sounds, lethargy, and a DECREASING respiratory effort (the infant tiring out) are ominous signs of impending respiratory failure and demand immediate intervention — paradoxically, a 'quieter' chest and less effort can mean the infant is decompensating. Clear nasal drainage and intermittent coughing are expected, non-emergent findings in bronchiolitis." },
+
+  { id:"e8q13", exam:8, topic:"Breathing Priority", type:"mcq",
+    stem:"During assessment, a nurse notes central cyanosis (bluish lips, tongue, and trunk) in a newborn. What is the PRIORITY action?",
+    options:["Document the finding as expected acrocyanosis","Administer oxygen and notify the provider immediately","Rewarm the infant with a blanket and recheck in 1 hour","Encourage the infant to feed"],
+    correct:[1],
+    rationale:"Central cyanosis (bluish lips, tongue, and trunk) is never normal and indicates inadequate oxygenation — a BREATHING/oxygenation emergency requiring immediate oxygen and provider notification. This differs from acrocyanosis (blue hands/feet only), which is an expected transitional finding. Prompt action addresses the airway–breathing priority." },
+
+  { id:"e8q14", exam:8, topic:"Breathing Priority", type:"mcq",
+    stem:"An infant recovering from anesthesia becomes difficult to arouse with shallow respirations and a falling oxygen saturation. What should the nurse do FIRST?",
+    options:["Administer the next scheduled antibiotic dose","Reposition to open the airway, stimulate the infant, and provide oxygen/ventilatory support","Change the surgical dressing","Document the findings and continue routine monitoring"],
+    correct:[1],
+    rationale:"Using the ABCs, the failing airway/breathing is addressed FIRST: reposition to open the airway, stimulate the infant, and provide oxygen or assisted ventilation as needed. Medication administration, dressing changes, and documentation are lower priorities than restoring adequate oxygenation and ventilation." },
+
+  { id:"e8q15", exam:8, topic:"Circulation Priority", type:"mcq",
+    stem:"An infant with tetralogy of Fallot suddenly becomes acutely cyanotic, irritable, and dyspneic while crying (a hypercyanotic 'tet' spell). What is the nurse's PRIORITY action?",
+    options:["Lay the infant flat and restrain the extremities","Place the infant in a knee-to-chest position, provide oxygen, and calm the infant","Encourage vigorous activity to increase circulation","Administer a laxative"],
+    correct:[1],
+    rationale:"During a hypercyanotic spell, place the infant in a knee-to-chest position, give oxygen, and provide calm comfort. Knee-to-chest increases systemic vascular resistance, which decreases the right-to-left shunt and improves pulmonary blood flow and oxygenation. Calming the infant lowers oxygen demand. This addresses the circulation/oxygenation crisis." },
+
+  { id:"e8q16", exam:8, topic:"Circulation Priority", type:"mcq",
+    stem:"A nurse is about to administer digoxin to a 6-month-old with heart failure. The apical heart rate is 88 beats/min. What is the PRIORITY action?",
+    options:["Administer the dose as ordered","Hold the dose and notify the provider, because bradycardia may indicate digoxin toxicity","Give half of the ordered dose","Give the dose and recheck the heart rate in 1 hour"],
+    correct:[1],
+    rationale:"Digoxin slows the heart rate, so the nurse counts the apical pulse for a full minute and HOLDS the dose if it is below the ordered parameter (commonly about 90-100 beats/min in an infant), then notifies the provider. A rate of 88 is below that threshold and can signal toxicity. Protecting circulation/cardiac safety is the priority; doses are never split." },
+
+  { id:"e8q17", exam:8, topic:"Circulation Priority", type:"mcq",
+    stem:"An infant with pyloric stenosis has had several days of projectile vomiting and is dehydrated. What is the PRIORITY nursing goal before surgery?",
+    options:["Prepare the infant for immediate emergency surgery","Correct fluid and electrolyte imbalances (dehydration and metabolic alkalosis) before surgery","Begin oral feedings to maintain nutrition","Administer antiemetics and prepare for discharge"],
+    correct:[1],
+    rationale:"Pyloric stenosis repair is not an emergency; the priority is first restoring CIRCULATION by correcting the dehydration and hypochloremic, hypokalemic metabolic alkalosis caused by persistent vomiting. Surgery proceeds only after the infant is rehydrated and electrolytes are stable. Oral feedings would worsen vomiting and are withheld preoperatively." },
+
+  { id:"e8q18", exam:8, topic:"Circulation Priority", type:"mcq",
+    stem:"Which set of findings in an infant should the nurse recognize as signs of significant dehydration/impending hypovolemic shock requiring immediate intervention?",
+    options:["Capillary refill of 1 second and moist mucous membranes","A sunken fontanel, tachycardia, capillary refill greater than 3 seconds, and decreased urine output","Strong peripheral pulses and pink, well-perfused skin","A steady weight gain of about 30 g per day"],
+    correct:[1],
+    rationale:"A sunken fontanel, tachycardia, delayed capillary refill (over 3 seconds), and decreased urine output indicate significant fluid volume deficit and impending hypovolemic shock — a CIRCULATION emergency requiring prompt fluid resuscitation. Brisk capillary refill, moist membranes, strong pulses, and appropriate weight gain are normal, reassuring findings." },
+
+  { id:"e8q19", exam:8, topic:"Circulation Priority", type:"mcq",
+    stem:"Several hours after surgery, an infant is pale and restless with a heart rate of 190, capillary refill of 4 seconds, and a falling blood pressure. What is the nurse's PRIORITY action?",
+    options:["Administer acetaminophen for the restlessness","Recognize signs of hemorrhage/hypovolemic shock and intervene immediately (notify the provider, ensure IV access and fluid resuscitation)","Offer oral fluids and reassess in 1 hour","Reposition the infant and document the findings"],
+    correct:[1],
+    rationale:"Tachycardia, pallor, restlessness, delayed capillary refill, and a falling blood pressure are signs of postoperative hemorrhage/hypovolemic shock — a CIRCULATION emergency. The priority is immediate intervention: notify the provider, ensure IV access, and begin fluid/volume resuscitation. Treating restlessness with acetaminophen or delaying care would be unsafe." },
+
+  { id:"e8q20", exam:8, topic:"Circulation Priority", type:"mcq",
+    stem:"A 1-hour-old large-for-gestational-age infant of a diabetic mother is jittery and feeding poorly, with a blood glucose of 30 mg/dL. What is the nurse's PRIORITY action?",
+    options:["Delay any intervention and recheck the glucose in 4 hours","Promptly initiate feeding or glucose per protocol and recheck the blood glucose","Place the infant under phototherapy","Withhold feedings to allow the infant to rest"],
+    correct:[1],
+    rationale:"Infants of diabetic mothers are prone to rebound hypoglycemia, which can rapidly cause neurologic injury, so prompt treatment (feeding or IV glucose per protocol) and rechecking the glucose are the priority. Delaying treatment or withholding feedings is unsafe, and phototherapy addresses hyperbilirubinemia, not hypoglycemia." },
+
+  { id:"e8q21", exam:8, topic:"Priority Setting (ABC)", type:"mcq",
+    stem:"A nurse is caring for four newborns. Applying the ABCs, which infant should the nurse assess FIRST?",
+    options:["A newborn with acrocyanosis of the hands and feet","A newborn with central cyanosis and nasal flaring","A newborn with a single episode of hiccups","A newborn who just passed meconium"],
+    correct:[1],
+    rationale:"Using the ABCs, the infant with central cyanosis and nasal flaring has a potential airway/breathing problem and must be assessed first. Acrocyanosis, hiccups, and passing meconium are all normal newborn findings. Priority-setting always directs the nurse to the patient with the most urgent airway/breathing/circulation concern." },
+
+  { id:"e8q22", exam:8, topic:"Priority Setting (ABC)", type:"mcq",
+    stem:"A nurse in a pediatric clinic must decide which child to see FIRST. Which child is the PRIORITY?",
+    options:["A child with a mild expiratory wheeze who is playing and interactive","A child with inspiratory stridor at rest, drooling, and tripod positioning","A child with a low-grade fever after immunizations","A toddler with a resolving diaper rash"],
+    correct:[1],
+    rationale:"The child with inspiratory stridor at rest, drooling, and tripod positioning shows signs of impending upper-AIRWAY obstruction (e.g., epiglottitis) and is the priority. A mild wheeze in a playful child, a low-grade post-immunization fever, and a resolving rash are all lower-acuity. The ABCs direct the nurse to the airway threat first." },
+
+  { id:"e8q23", exam:8, topic:"Priority Setting (ABC)", type:"mcq",
+    stem:"An infant is admitted in respiratory distress. Applying the ABCs, which nursing action takes PRIORITY?",
+    options:["Establishing IV access for antibiotics","Ensuring a patent airway and administering oxygen","Obtaining the admission weight","Completing the family health history"],
+    correct:[1],
+    rationale:"By the ABCs, ensuring a patent airway and adequate oxygenation/breathing comes before circulation (IV access) and before lower-priority tasks such as weights and history-taking. Airway and breathing are always addressed first in an infant who is in respiratory distress." },
+
+  { id:"e8q24", exam:8, topic:"Priority Setting (ABC)", type:"sata",
+    stem:"Which findings in a newborn require IMMEDIATE nursing intervention? Select all that apply.",
+    options:["Central cyanosis","Grunting with severe retractions","Apnea lasting 25 seconds with bradycardia","Acrocyanosis during the first 24 hours of life","A heart rate of 140 in a sleeping newborn"],
+    correct:[0,1,2],
+    rationale:"Central cyanosis (inadequate oxygenation), grunting with severe retractions (significant respiratory distress), and apnea over 20 seconds with bradycardia are all airway/breathing emergencies requiring immediate intervention. Acrocyanosis in the first 24 hours and a heart rate of 140 in a sleeping newborn are normal, expected findings." },
+
+  { id:"e8q25", exam:8, topic:"Priority Setting (ABC)", type:"mcq",
+    stem:"A nurse has several tasks to complete. Applying priority-setting principles, which task should be performed FIRST?",
+    options:["Suction the airway of an infant with copious secretions and oxygen desaturation","Administer a scheduled oral vitamin to a stable infant","Document a routine assessment in the chart","Change a wet diaper on a stable infant"],
+    correct:[0],
+    rationale:"Suctioning the airway of an infant with copious secretions and desaturation addresses an airway/breathing problem and is the priority (ABCs). Administering a routine vitamin, documenting, and changing a diaper on stable infants are important but lower-priority tasks that can wait until the airway emergency is managed." }
 
   ]
 };
