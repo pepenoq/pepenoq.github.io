@@ -96,7 +96,7 @@
         card.appendChild(el("p", "meta", "Focused theme: Neonatal/Infant Medications (10 key drugs)"));
       }
       if (ex === 8) {
-        card.appendChild(el("p", "meta", "Focused theme: Priority Interventions (ABCs of Nursing)"));
+        card.appendChild(el("p", "meta", "UPDATED - YOU'RE WELCOME CIARA | Focused theme: Priority Interventions (ABCs of Nursing)"));
       }
 
       if (answered > 0) {
