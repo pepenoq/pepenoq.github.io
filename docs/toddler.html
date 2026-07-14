@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Toddler &amp; Beyond Practice Exams — Coming Soon</title>
+<style>
+  :root{
+    --bg:#0f1720;
+    --panel:#16212e;
+    --panel-2:#1d2b3a;
+    --ink:#e8eef5;
+    --muted:#9fb0c3;
+    --line:#2a3a4d;
+    --brand:#4aa3ff;
+    --brand-2:#2d7ff0;
+    --amber:#ffcc66;
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:linear-gradient(180deg,#0d141d 0%, #0f1720 100%);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5;min-height:100vh;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:24px 18px 60px}
+  a{color:var(--brand)}
+
+  .topbar{display:flex;align-items:center;gap:12px;margin-bottom:26px;flex-wrap:wrap}
+  .logo{
+    width:46px;height:46px;border-radius:12px;flex:0 0 auto;
+    background:radial-gradient(circle at 30% 30%,var(--amber),#c98a1b);
+    display:grid;place-items:center;font-size:24px;box-shadow:var(--shadow);
+  }
+  .topbar h1{font-size:1.25rem;margin:0}
+  .topbar p{margin:0;color:var(--muted);font-size:.82rem}
+
+  .panel{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:40px 32px;box-shadow:var(--shadow);text-align:center;
+  }
+  .big{font-size:3.4rem;margin:0 0 6px}
+  .panel h2{margin:0 0 10px;font-size:1.5rem}
+  .panel p{color:var(--muted);max-width:520px;margin:0 auto 8px}
+  .pill{
+    display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.5px;
+    text-transform:uppercase;padding:5px 13px;border-radius:999px;
+    border:1px solid #6b4e14;color:var(--amber);background:#20170866;margin-bottom:18px;
+  }
+  .topics{
+    display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:22px 0 26px;
+  }
+  .topics span{
+    font-size:.78rem;color:var(--muted);border:1px solid var(--line);
+    background:var(--panel-2);border-radius:999px;padding:5px 13px;
+  }
+  .btn{
+    display:inline-block;background:var(--brand-2);color:white;border:none;border-radius:10px;
+    padding:12px 22px;font-weight:700;font-size:.95rem;text-decoration:none;
+  }
+  .btn:hover{background:var(--brand)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <div class="logo">🧸</div>
+    <div>
+      <h1>Toddler &amp; Beyond Practice Exams</h1>
+      <p><a href="index.html">← Back to home</a></p>
+    </div>
+  </div>
+
+  <div class="panel">
+    <p class="big">🚧</p>
+    <span class="pill">Coming soon</span>
+    <h2>Question banks are being written</h2>
+    <p>NCLEX/HESI-style practice exams for the Toddler unit and beyond are on the way,
+       in the same format as the Infant exams — mixed-topic exams, focused single-theme
+       exams, full rationales, and automatic progress saving.</p>
+    <div class="topics">
+      <span>Growth &amp; Development</span>
+      <span>Toilet Training</span>
+      <span>Safety · Poisoning · Burns · Drowning</span>
+      <span>Lead Poisoning</span>
+      <span>Communicable Diseases &amp; Immunizations</span>
+      <span>Otitis Media</span>
+      <span>Kawasaki Disease</span>
+      <span>Sickle Cell Disease</span>
+      <span>Croup · Epiglottitis · Asthma</span>
+      <span>Fluid &amp; Electrolytes</span>
+      <span>Nephrotic Syndrome</span>
+    </div>
+    <p style="margin-bottom:22px">In the meantime, try the
+       <a href="scramble.html">Toddler Word Scramble</a> to warm up on the unit's key terms.</p>
+    <a class="btn" href="index.html">← Back to home</a>
+  </div>
+
+</div>
+</body>
+</html>
