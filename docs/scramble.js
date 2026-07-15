@@ -4,9 +4,13 @@
 (function () {
   "use strict";
 
-  var WORDS = window.SCRAMBLE_WORDS || [];
-  var ROUND_SIZE = 10;
-  var STORE_KEY = "peds_scramble_v1";
+  // Optional per-page config lets a second scramble (e.g. Psychopharmacology)
+  // reuse this engine with its own word bank + saved-score key. Falls back to
+  // the original Toddler-unit globals so the existing page is unchanged.
+  var CFG = window.SCRAMBLE_CONFIG || {};
+  var WORDS = CFG.words || window.SCRAMBLE_WORDS || [];
+  var ROUND_SIZE = CFG.roundSize || 10;
+  var STORE_KEY = CFG.storeKey || "peds_scramble_v1";
 
   // ---- persistence (best-effort; game still works if storage blocked) ----
   var store = loadStore();

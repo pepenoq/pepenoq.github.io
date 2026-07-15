@@ -73,6 +73,7 @@
   .card.infant .icon{background:#0e2a44}
   .card.toddler .icon{background:#3a2a0e}
   .card.scramble .icon{background:#2a1e44}
+  .card.psychopharm .icon{background:#0e2b28}
   .card h3{margin:0;font-size:1.15rem}
   .card p{margin:0;color:var(--muted);font-size:.88rem;flex:1}
   .tag{
@@ -82,6 +83,30 @@
   .tag.live{color:var(--green);border-color:var(--green);background:#12351f66}
   .tag.soon{color:var(--amber);border-color:#6b4e14;background:#20170866}
   .tag.game{color:var(--purple);border-color:#5d3fa0;background:#231a3d66}
+  .tag.psych{color:#37d0b5;border-color:#1f7d70;background:#0e2b2866}
+
+  /* ---------- Standout Psychopharmacology card ---------- */
+  .card.psychopharm{
+    position:relative;
+    border-color:#1f7d70;
+    background:linear-gradient(180deg,#123330,#0f2926);
+    box-shadow:0 12px 34px rgba(14,143,126,.28), var(--shadow);
+  }
+  a.card.psychopharm:hover{border-color:#37d0b5;transform:translateY(-5px)}
+  .card.psychopharm .icon{border-color:#1f7d70}
+  .card.psychopharm .go{background:#0e8f7e}
+  a.card.psychopharm:hover .go{background:#12b39c}
+  .standout{
+    position:absolute;top:-11px;right:16px;
+    font-size:.66rem;font-weight:800;letter-spacing:.6px;text-transform:uppercase;
+    color:#052a25;background:linear-gradient(90deg,#37d0b5,#8ef0df);
+    padding:5px 12px;border-radius:999px;box-shadow:0 4px 14px rgba(55,208,181,.5);
+    animation:pulseGlow 2.2s ease-in-out infinite;
+  }
+  @keyframes pulseGlow{
+    0%,100%{box-shadow:0 4px 14px rgba(55,208,181,.45)}
+    50%{box-shadow:0 4px 22px rgba(55,208,181,.85)}
+  }
   .card .go{
     margin-top:4px;border:none;border-radius:10px;padding:12px 14px;font-weight:700;
     background:var(--brand-2);color:white;font-size:.95rem;text-align:center;
@@ -110,12 +135,26 @@
   <div class="hero">
     <h2>Welcome — choose where to study</h2>
     <p>Practice question banks and study games for the NUR 404 Maternity/Paediatrics
-       semester. Pick a section below: full NCLEX/HESI-style practice exams for the
-       Infant unit, the upcoming Toddler &amp; Beyond exams, or a vocabulary Word
-       Scramble game built from the Week 8 Toddler readings.</p>
+       semester and the NUR 422 Psychopharmacology unit. Pick a section below: full
+       NCLEX/HESI-style practice exams for the Infant unit, the upcoming Toddler &amp;
+       Beyond exams, a vocabulary Word Scramble from the Toddler readings, or the new
+       <b>Psychopharmacology</b> drug-scramble built from the psych-med review.</p>
   </div>
 
   <div class="grid">
+    <a class="card psychopharm" href="psychopharm.html">
+      <span class="standout">★ New · Standout</span>
+      <div class="icon">💊</div>
+      <span class="tag psych">Study game · 90+ terms</span>
+      <h3>Psychopharmacology Scramble</h3>
+      <p>Unscramble drug names, classes, neurotransmitters, side effects, and nursing
+         concepts from the NUR 422 <i>Psychopharmacology Review</i> and FA Davis Ch. 4.
+         Clues are written to make you <b>reason it out</b> — mechanism → effect → nursing
+         action — across antidepressants, antipsychotics/EPS, mood stabilizers,
+         anxiolytics, sleep agents, and ADHD drugs.</p>
+      <span class="go">Play the drug scramble →</span>
+    </a>
+
     <a class="card infant" href="infant.html">
       <div class="icon">🍼</div>
       <span class="tag live">Live · 345 questions</span>
