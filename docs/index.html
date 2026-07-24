@@ -114,27 +114,63 @@
   a.card:hover .go{background:var(--brand)}
   .card.toddler .go{background:transparent;border:1px solid var(--line);color:var(--muted)}
 
-  /* ---------- Standout Exam 4 card ---------- */
+  /* ---------- Standout Exam 4 card (nice blue) ---------- */
   .card.exam4{
     position:relative;
-    border-color:#3a5fb0;
-    background:linear-gradient(180deg,#1a2440,#141d33);
-    box-shadow:0 12px 34px rgba(74,120,255,.28), var(--shadow);
+    border-color:#3f7fe6;
+    background:linear-gradient(180deg,#16294d,#111d38);
+    box-shadow:0 14px 38px rgba(47,131,255,.30), var(--shadow);
   }
-  a.card.exam4:hover{border-color:#7aa2ff;transform:translateY(-5px)}
-  .card.exam4 .icon{border-color:#3a5fb0;background:#14213f}
-  .card.exam4 .go{background:#3257c9}
-  a.card.exam4:hover .go{background:#4a74e0}
+  a.card.exam4:hover{border-color:#68a6ff;transform:translateY(-5px)}
+  .card.exam4 .icon{border-color:#3f7fe6;background:#152a4d}
+  .card.exam4 .go{background:#2f6fe0}
+  a.card.exam4:hover .go{background:#4a8bff}
   .standout.blue{
-    color:#06152e;background:linear-gradient(90deg,#7aa2ff,#b9d0ff);
-    box-shadow:0 4px 14px rgba(122,162,255,.5);
+    color:#f4f9ff;background:linear-gradient(90deg,#2f83ff,#57a6ff);
+    box-shadow:0 4px 16px rgba(47,131,255,.6);
     animation:pulseGlowBlue 2.2s ease-in-out infinite;
   }
   @keyframes pulseGlowBlue{
-    0%,100%{box-shadow:0 4px 14px rgba(122,162,255,.45)}
-    50%{box-shadow:0 4px 22px rgba(122,162,255,.85)}
+    0%,100%{box-shadow:0 4px 16px rgba(47,131,255,.5)}
+    50%{box-shadow:0 4px 26px rgba(47,131,255,.95)}
   }
-  .tag.exam4tag{color:#9ab8ff;border-color:#3a5fb0;background:#16213f66}
+  .tag.exam4tag{color:#a9c8ff;border-color:#3f7fe6;background:#16213f66}
+
+  /* ---------- Featured section: Exam 4 stands alone ---------- */
+  .featured{margin-bottom:34px}
+  .featured .eyebrow{
+    margin:0 2px 12px;font-size:.72rem;font-weight:800;letter-spacing:1.2px;
+    text-transform:uppercase;color:#7fb0ff;
+  }
+  .card.exam4.featured-card{padding:30px 30px 26px}
+  .card.exam4.featured-card .icon{width:60px;height:60px;font-size:34px;border-radius:16px}
+  .card.exam4.featured-card h3{font-size:1.5rem}
+  .card.exam4.featured-card p{font-size:.95rem;max-width:72ch}
+  .card.exam4.featured-card .go{align-self:flex-start;padding:12px 22px}
+
+  /* ---------- Earlier units: de-emphasised / dimmed ---------- */
+  .other-tools{margin-top:4px}
+  .other-heading{
+    margin:0 2px 14px;font-size:.82rem;font-weight:700;letter-spacing:.6px;
+    text-transform:uppercase;color:var(--muted);
+  }
+  .grid.secondary{grid-template-columns:repeat(2,1fr)}
+  @media (max-width:820px){.grid.secondary{grid-template-columns:1fr}}
+  .grid.secondary .card{
+    opacity:.5;filter:saturate(.55);
+    transition:opacity .15s ease,filter .15s ease,transform .12s ease,border-color .12s ease;
+  }
+  .grid.secondary a.card:hover{opacity:1;filter:none}
+  /* tone the old psychopharm highlight down to a normal, quiet card */
+  .grid.secondary .card.psychopharm{
+    border-color:var(--line);
+    background:linear-gradient(180deg,var(--panel-2),var(--panel));
+    box-shadow:var(--shadow);
+  }
+  .grid.secondary .card.psychopharm .go{background:var(--brand-2)}
+  .grid.secondary .standout{
+    background:#26333f;color:var(--muted);box-shadow:none;animation:none;
+  }
 
   .disclaimer{margin-top:30px;font-size:.78rem;color:var(--muted);
     border-top:1px solid var(--line);padding-top:16px}
@@ -156,16 +192,16 @@
 
   <div class="hero">
     <h2>Welcome — choose where to study</h2>
-    <p>Practice question banks and study games for the NUR 404 Maternity/Paediatrics
-       semester and the NUR 422 Psychopharmacology unit. Pick a section below: the new
-       <b>Exam 4</b> bank spanning Toddler through Adolescent, full NCLEX/HESI-style
-       practice exams for the Infant unit, a vocabulary Word Scramble from the Toddler
-       readings, and the <b>Psychopharmacology</b> drug-scramble built from the psych-med
-       review.</p>
+    <p><b>Exam 4 — Toddler → Adolescent</b> is the current focus: six NCLEX/HESI-style
+       practice exams (300 questions) with full rationales, featured below. Earlier units
+       and study games — the Infant practice exams, the Toddler Word Scramble, and the
+       Psychopharmacology drug-scramble — are still available further down.</p>
   </div>
 
-  <div class="grid">
-    <a class="card exam4" href="exam4.html">
+  <!-- ===== Featured: current exam ===== -->
+  <section class="featured">
+    <p class="eyebrow">★ Current exam — start here</p>
+    <a class="card exam4 featured-card" href="exam4.html">
       <span class="standout blue">★ New · Exam 4</span>
       <div class="icon">🧒</div>
       <span class="tag exam4tag">Live · 300 questions · 6 exams</span>
@@ -177,7 +213,12 @@
          &amp; SATA, written NCLEX-style with genuinely plausible distractors and full rationales.</p>
       <span class="go">Enter Exam 4 practice →</span>
     </a>
+  </section>
 
+  <!-- ===== Earlier units &amp; study games (de-emphasised) ===== -->
+  <section class="other-tools">
+    <h3 class="other-heading">Earlier units &amp; study games</h3>
+    <div class="grid secondary">
     <a class="card psychopharm" href="psychopharm.html">
       <span class="standout">★ New · Standout</span>
       <div class="icon">💊</div>
@@ -222,7 +263,8 @@
          clue and a definition after you solve it.</p>
       <span class="go">Play the game →</span>
     </a>
-  </div>
+    </div>
+  </section>
 
   <p class="disclaimer">Educational practice tools by Enoch Zhao, built from the MCPHS
      NUR 404 unit source material. Rationales and clues are study aids and should not
