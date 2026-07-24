@@ -114,6 +114,28 @@
   a.card:hover .go{background:var(--brand)}
   .card.toddler .go{background:transparent;border:1px solid var(--line);color:var(--muted)}
 
+  /* ---------- Standout Exam 4 card ---------- */
+  .card.exam4{
+    position:relative;
+    border-color:#3a5fb0;
+    background:linear-gradient(180deg,#1a2440,#141d33);
+    box-shadow:0 12px 34px rgba(74,120,255,.28), var(--shadow);
+  }
+  a.card.exam4:hover{border-color:#7aa2ff;transform:translateY(-5px)}
+  .card.exam4 .icon{border-color:#3a5fb0;background:#14213f}
+  .card.exam4 .go{background:#3257c9}
+  a.card.exam4:hover .go{background:#4a74e0}
+  .standout.blue{
+    color:#06152e;background:linear-gradient(90deg,#7aa2ff,#b9d0ff);
+    box-shadow:0 4px 14px rgba(122,162,255,.5);
+    animation:pulseGlowBlue 2.2s ease-in-out infinite;
+  }
+  @keyframes pulseGlowBlue{
+    0%,100%{box-shadow:0 4px 14px rgba(122,162,255,.45)}
+    50%{box-shadow:0 4px 22px rgba(122,162,255,.85)}
+  }
+  .tag.exam4tag{color:#9ab8ff;border-color:#3a5fb0;background:#16213f66}
+
   .disclaimer{margin-top:30px;font-size:.78rem;color:var(--muted);
     border-top:1px solid var(--line);padding-top:16px}
 </style>
@@ -135,13 +157,27 @@
   <div class="hero">
     <h2>Welcome — choose where to study</h2>
     <p>Practice question banks and study games for the NUR 404 Maternity/Paediatrics
-       semester and the NUR 422 Psychopharmacology unit. Pick a section below: full
-       NCLEX/HESI-style practice exams for the Infant unit, the upcoming Toddler &amp;
-       Beyond exams, a vocabulary Word Scramble from the Toddler readings, or the new
-       <b>Psychopharmacology</b> drug-scramble built from the psych-med review.</p>
+       semester and the NUR 422 Psychopharmacology unit. Pick a section below: the new
+       <b>Exam 4</b> bank spanning Toddler through Adolescent, full NCLEX/HESI-style
+       practice exams for the Infant unit, a vocabulary Word Scramble from the Toddler
+       readings, and the <b>Psychopharmacology</b> drug-scramble built from the psych-med
+       review.</p>
   </div>
 
   <div class="grid">
+    <a class="card exam4" href="exam4.html">
+      <span class="standout blue">★ New · Exam 4</span>
+      <div class="icon">🧒</div>
+      <span class="tag exam4tag">Live · 300 questions · 6 exams</span>
+      <h3>Exam 4 — Toddler → Adolescent</h3>
+      <p>Six 50-question NCLEX/HESI-style practice exams across the <b>Toddler, Preschool,
+         School-Age, and Adolescent</b> units — growth &amp; development, safety &amp; poisoning,
+         communicable disease, and system disorders. Includes a <b>cumulative</b> exam and a
+         focused <b>Growth &amp; Development</b> exam spanning every age group. Multiple choice
+         &amp; SATA, written NCLEX-style with genuinely plausible distractors and full rationales.</p>
+      <span class="go">Enter Exam 4 practice →</span>
+    </a>
+
     <a class="card psychopharm" href="psychopharm.html">
       <span class="standout">★ New · Standout</span>
       <div class="icon">💊</div>
