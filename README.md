@@ -1,8 +1,17 @@
-# Paediatrics Practice — NCLEX/HESI Question Bank
+# pepenoq Pages — NCLEX/HESI Question Banks
 
-A local, offline web app for practicing **Paediatrics (The Infant unit)** questions in
-NCLEX/HESI format. Runs entirely in your web browser on **Windows and macOS** — no
+A local, offline web app holding NCLEX/HESI-style practice question banks for more than
+one nursing course. Runs entirely in your web browser on **Windows and macOS** — no
 internet, no installation, no accounts.
+
+Two courses are covered, and they are kept completely separate — separate pages, separate
+questions, and separate saved progress:
+
+- **NUR 504 — Adult Cardiovascular Critical Care** (current) — `nur504.html`
+- **NUR 404 — Maternity / Paediatrics** (earlier) — `exam4.html`, `infant.html`, plus the
+  word-scramble study games
+
+`index.html` is the landing page and links to everything.
 
 ## Internet Direct Access link:
 [https://pepenoq.github.io](https://pepenoq.github.io/)
@@ -10,6 +19,36 @@ internet, no installation, no accounts.
 ---
 
 ## What's included
+
+### NUR 504 — Adult Cardiovascular Critical Care (`nur504.html`)
+
+- **200 questions** across **four 50-question exams**, built from the Week 1, Week 2 and
+  Week 3 lecture decks (slides + speaker notes), the pre-class materials, and the in-class
+  activities and case studies.
+  - **Exam 1 — Week 1:** hemodynamic monitoring and vasoactive therapy — preload, afterload
+    and contractility, CO/CI, MAP and pulse pressure, arterial lines, CVP, the PA catheter,
+    pressors and inotropes, and ECG fundamentals.
+  - **Exam 2 — Week 2:** dysrhythmias, conduction and devices — sinus, atrial and ventricular
+    rhythms, AV block, the lethal rhythms, electrolyte ECG changes, the antiarrhythmics,
+    cardioversion versus defibrillation, pacemakers and AICDs.
+  - **Exam 3 — Week 2:** acute coronary syndrome, PCI and cardiac surgery — angina through
+    STEMI, troponin kinetics, lead localization, door-to-balloon, fibrinolytics, PCI
+    aftercare, and CABG.
+  - **Exam 4 — Week 3:** valves, carditis, cardiomyopathy, tamponade and aortic disease.
+- **148 multiple choice + 52 SATA**, written as hard NCLEX critical-thinking items. There
+  are no filler options — every distractor is a real drug, rhythm, value or intervention
+  from an adjacent concept, so you have to know the material to rule it out. The correct
+  answer is spread evenly across all four multiple-choice positions, and SATA items vary
+  between two and five correct options, so neither position nor count gives anything away.
+- **Full rationale** on every question that also explains why the best distractor is wrong.
+
+### NUR 404 — Maternity / Paediatrics
+
+The Exam 4 bank (`exam4.html`, 300 questions, Toddler through Adolescent) and the study
+games (`psychopharm.html`, `scramble.html`) are linked from the landing page. The Infant
+unit bank (`infant.html`) is described below.
+
+#### Infant unit (`infant.html`)
 
 - **345 questions** total: **six 50-question practice exams**, a **20-question dosage-calculation test**, and a **25-question priority-intervention exam**.
 - **Exams 1–4** each **mix every topic** in the unit (newborn adaptation, growth & development,
@@ -62,18 +101,18 @@ the Maternity/Paediatrics semester (application-level, not simple recall).
 No server or install needed.
 
 ### Windows
-1. Open the `PaediatricsPractice` folder.
+1. Open the `pepenoqPages` folder.
 2. **Double-click `index.html`** — it opens in your default browser (Edge, Chrome, etc.).
 
 ### macOS
-1. Open the `PaediatricsPractice` folder in Finder.
+1. Open the `pepenoqPages` folder in Finder.
 2. **Double-click `index.html`**, or right-click → **Open With** → your browser (Safari,
    Chrome, etc.).
 
 That's it. Choose a practice exam from the landing screen and begin.
 
-> **Tip:** If you ever want progress-saving to work most reliably, keep all three files
-> together in the same folder and open `index.html` directly. Some browsers restrict
+> **Tip:** If you ever want progress-saving to work most reliably, keep all the files
+> in `docs/` together in the same folder and open `index.html` directly. Some browsers restrict
 > storage on `file://` pages in private/incognito mode — if progress doesn't persist, try a
 > normal (non-private) window.
 
