@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Paediatrics Practice — Study Hub</title>
+<title>Nursing Practice — Study Hub</title>
 <style>
   :root{
     --bg:#0f1720;
@@ -17,6 +17,10 @@
     --green:#2fbf71;
     --amber:#ffcc66;
     --purple:#b48bff;
+    /* NUR 504 cardiac accent */
+    --cardiac:#ff6b81;
+    --cardiac-2:#d92b4b;
+    --cardiac-line:#6d2437;
     --shadow:0 10px 30px rgba(0,0,0,.35);
     --radius:14px;
   }
@@ -29,18 +33,18 @@
     line-height:1.5;
     min-height:100vh;
   }
-  .wrap{max-width:940px;margin:0 auto;padding:24px 18px 60px}
+  .wrap{max-width:980px;margin:0 auto;padding:24px 18px 60px}
   a{color:var(--brand)}
 
   /* ---------- Header ---------- */
   .topbar{
     display:flex;align-items:center;justify-content:space-between;
-    gap:12px;margin-bottom:26px;flex-wrap:wrap;
+    gap:12px;margin-bottom:24px;flex-wrap:wrap;
   }
   .brandmark{display:flex;align-items:center;gap:12px}
   .logo{
     width:46px;height:46px;border-radius:12px;flex:0 0 auto;
-    background:radial-gradient(circle at 30% 30%,var(--brand),var(--brand-2));
+    background:radial-gradient(circle at 30% 30%,var(--cardiac),var(--brand-2));
     display:grid;place-items:center;font-size:24px;box-shadow:var(--shadow);
   }
   .brandmark h1{font-size:1.25rem;margin:0;letter-spacing:.2px}
@@ -49,14 +53,40 @@
   /* ---------- Hero ---------- */
   .hero{
     background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
-    padding:26px 28px;margin-bottom:26px;box-shadow:var(--shadow);
+    padding:22px 26px;margin-bottom:34px;box-shadow:var(--shadow);
   }
-  .hero h2{margin:0 0 8px;font-size:1.5rem}
-  .hero p{margin:0;color:var(--muted);font-size:.97rem}
+  .hero h2{margin:0 0 8px;font-size:1.35rem}
+  .hero p{margin:0;color:var(--muted);font-size:.95rem}
 
-  /* ---------- Section cards ---------- */
+  /* ---------- Course sections ---------- */
+  .course{margin-bottom:44px}
+  .course-head{
+    display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;
+    padding-bottom:12px;margin-bottom:20px;border-bottom:2px solid var(--line);
+  }
+  .course-head .code{
+    font-size:.72rem;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;
+    padding:5px 12px;border-radius:999px;
+  }
+  .course-head h2{margin:0;font-size:1.3rem}
+  .course-head .sub{margin:0;color:var(--muted);font-size:.86rem;flex-basis:100%}
+
+  /* NUR 504 — current course, cardiac red */
+  .course.nur504 .course-head{border-bottom-color:var(--cardiac-line)}
+  .course.nur504 .course-head .code{
+    color:#ffe3e8;background:linear-gradient(90deg,var(--cardiac-2),var(--cardiac));
+    box-shadow:0 4px 16px rgba(217,43,75,.45);
+  }
+  /* NUR 404 — earlier course, quieter blue */
+  .course.nur404 .course-head .code{
+    color:#a9c8ff;background:#16213f;border:1px solid #2f4a7a;
+  }
+
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  @media (max-width:820px){.grid{grid-template-columns:1fr}}
+  @media (max-width:860px){.grid{grid-template-columns:1fr}}
+  .grid.two{grid-template-columns:repeat(2,1fr)}
+  @media (max-width:860px){.grid.two{grid-template-columns:1fr}}
+
   .card{
     background:linear-gradient(180deg,var(--panel-2),var(--panel));
     border:1px solid var(--line);border-radius:var(--radius);
@@ -74,6 +104,7 @@
   .card.toddler .icon{background:#3a2a0e}
   .card.scramble .icon{background:#2a1e44}
   .card.psychopharm .icon{background:#0e2b28}
+  .card.exam4 .icon{background:#152a4d}
   .card h3{margin:0;font-size:1.15rem}
   .card p{margin:0;color:var(--muted);font-size:.88rem;flex:1}
   .tag{
@@ -84,29 +115,8 @@
   .tag.soon{color:var(--amber);border-color:#6b4e14;background:#20170866}
   .tag.game{color:var(--purple);border-color:#5d3fa0;background:#231a3d66}
   .tag.psych{color:#37d0b5;border-color:#1f7d70;background:#0e2b2866}
-
-  /* ---------- Standout Psychopharmacology card ---------- */
-  .card.psychopharm{
-    position:relative;
-    border-color:#1f7d70;
-    background:linear-gradient(180deg,#123330,#0f2926);
-    box-shadow:0 12px 34px rgba(14,143,126,.28), var(--shadow);
-  }
-  a.card.psychopharm:hover{border-color:#37d0b5;transform:translateY(-5px)}
-  .card.psychopharm .icon{border-color:#1f7d70}
-  .card.psychopharm .go{background:#0e8f7e}
-  a.card.psychopharm:hover .go{background:#12b39c}
-  .standout{
-    position:absolute;top:-11px;right:16px;
-    font-size:.66rem;font-weight:800;letter-spacing:.6px;text-transform:uppercase;
-    color:#052a25;background:linear-gradient(90deg,#37d0b5,#8ef0df);
-    padding:5px 12px;border-radius:999px;box-shadow:0 4px 14px rgba(55,208,181,.5);
-    animation:pulseGlow 2.2s ease-in-out infinite;
-  }
-  @keyframes pulseGlow{
-    0%,100%{box-shadow:0 4px 14px rgba(55,208,181,.45)}
-    50%{box-shadow:0 4px 22px rgba(55,208,181,.85)}
-  }
+  .tag.exam4tag{color:#a9c8ff;border-color:#3f7fe6;background:#16213f66}
+  .tag.cardiactag{color:#ffb3c0;border-color:var(--cardiac-2);background:#3a121f66}
   .card .go{
     margin-top:4px;border:none;border-radius:10px;padding:12px 14px;font-weight:700;
     background:var(--brand-2);color:white;font-size:.95rem;text-align:center;
@@ -114,65 +124,57 @@
   a.card:hover .go{background:var(--brand)}
   .card.toddler .go{background:transparent;border:1px solid var(--line);color:var(--muted)}
 
-  /* ---------- Standout Exam 4 card (nice blue) ---------- */
-  .card.exam4{
+  /* ---------- Featured NUR 504 card ---------- */
+  .card.nur504card{
     position:relative;
-    border-color:#3f7fe6;
-    background:linear-gradient(180deg,#16294d,#111d38);
-    box-shadow:0 14px 38px rgba(47,131,255,.30), var(--shadow);
+    border-color:var(--cardiac-2);
+    background:linear-gradient(180deg,#3a121f,#25101a);
+    box-shadow:0 14px 38px rgba(217,43,75,.30), var(--shadow);
+    padding:30px 30px 26px;
   }
-  a.card.exam4:hover{border-color:#68a6ff;transform:translateY(-5px)}
-  .card.exam4 .icon{border-color:#3f7fe6;background:#152a4d}
-  .card.exam4 .go{background:#2f6fe0}
-  a.card.exam4:hover .go{background:#4a8bff}
-  .standout.blue{
-    color:#f4f9ff;background:linear-gradient(90deg,#2f83ff,#57a6ff);
-    box-shadow:0 4px 16px rgba(47,131,255,.6);
-    animation:pulseGlowBlue 2.2s ease-in-out infinite;
+  a.card.nur504card:hover{border-color:var(--cardiac);transform:translateY(-5px)}
+  .card.nur504card .icon{
+    width:60px;height:60px;font-size:34px;border-radius:16px;
+    border-color:var(--cardiac-2);background:#4a1626;
   }
-  @keyframes pulseGlowBlue{
-    0%,100%{box-shadow:0 4px 16px rgba(47,131,255,.5)}
-    50%{box-shadow:0 4px 26px rgba(47,131,255,.95)}
+  .card.nur504card h3{font-size:1.5rem}
+  .card.nur504card p{font-size:.95rem;max-width:74ch}
+  .card.nur504card .go{background:var(--cardiac-2);align-self:flex-start;padding:12px 22px}
+  a.card.nur504card:hover .go{background:var(--cardiac)}
+  .standout{
+    position:absolute;top:-11px;right:16px;
+    font-size:.66rem;font-weight:800;letter-spacing:.6px;text-transform:uppercase;
+    color:#fff0f3;background:linear-gradient(90deg,var(--cardiac-2),var(--cardiac));
+    padding:5px 12px;border-radius:999px;
+    animation:pulseGlowRed 2.2s ease-in-out infinite;
   }
-  .tag.exam4tag{color:#a9c8ff;border-color:#3f7fe6;background:#16213f66}
+  @keyframes pulseGlowRed{
+    0%,100%{box-shadow:0 4px 16px rgba(217,43,75,.5)}
+    50%{box-shadow:0 4px 26px rgba(255,107,129,.95)}
+  }
+  .breakdown{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:6px;
+  }
+  @media (max-width:720px){.breakdown{grid-template-columns:repeat(2,1fr)}}
+  .breakdown div{
+    border:1px solid var(--cardiac-line);border-radius:10px;padding:10px 12px;
+    background:#2a1018;font-size:.78rem;color:#f0d7dd;
+  }
+  .breakdown div b{display:block;color:#ffb3c0;font-size:.72rem;letter-spacing:.4px;
+    text-transform:uppercase;margin-bottom:3px}
 
-  /* ---------- Featured section: Exam 4 stands alone ---------- */
-  .featured{margin-bottom:34px}
-  .featured .eyebrow{
-    margin:0 2px 12px;font-size:.72rem;font-weight:800;letter-spacing:1.2px;
-    text-transform:uppercase;color:#7fb0ff;
-  }
-  .card.exam4.featured-card{padding:30px 30px 26px}
-  .card.exam4.featured-card .icon{width:60px;height:60px;font-size:34px;border-radius:16px}
-  .card.exam4.featured-card h3{font-size:1.5rem}
-  .card.exam4.featured-card p{font-size:.95rem;max-width:72ch}
-  .card.exam4.featured-card .go{align-self:flex-start;padding:12px 22px}
-
-  /* ---------- Earlier units: de-emphasised / dimmed ---------- */
-  .other-tools{margin-top:4px}
-  .other-heading{
-    margin:0 2px 14px;font-size:.82rem;font-weight:700;letter-spacing:.6px;
-    text-transform:uppercase;color:var(--muted);
-  }
-  .grid.secondary{grid-template-columns:repeat(2,1fr)}
-  @media (max-width:820px){.grid.secondary{grid-template-columns:1fr}}
-  .grid.secondary .card{
-    opacity:.5;filter:saturate(.55);
+  /* ---------- NUR 404 de-emphasised ---------- */
+  .course.nur404 .grid .card{
+    opacity:.62;filter:saturate(.7);
     transition:opacity .15s ease,filter .15s ease,transform .12s ease,border-color .12s ease;
   }
-  .grid.secondary a.card:hover{opacity:1;filter:none}
-  /* tone the old psychopharm highlight down to a normal, quiet card */
-  .grid.secondary .card.psychopharm{
-    border-color:var(--line);
-    background:linear-gradient(180deg,var(--panel-2),var(--panel));
-    box-shadow:var(--shadow);
-  }
-  .grid.secondary .card.psychopharm .go{background:var(--brand-2)}
-  .grid.secondary .standout{
-    background:#26333f;color:var(--muted);box-shadow:none;animation:none;
+  .course.nur404 .grid a.card:hover{opacity:1;filter:none}
+  .subhead{
+    margin:26px 2px 14px;font-size:.78rem;font-weight:700;letter-spacing:.7px;
+    text-transform:uppercase;color:var(--muted);
   }
 
-  .disclaimer{margin-top:30px;font-size:.78rem;color:var(--muted);
+  .disclaimer{margin-top:10px;font-size:.78rem;color:var(--muted);
     border-top:1px solid var(--line);padding-top:16px}
 </style>
 </head>
@@ -181,94 +183,124 @@
 
   <div class="topbar">
     <div class="brandmark">
-      <div class="logo">🩺</div>
+      <div class="logo">&#129728;</div>
       <div>
-        <h1>NUR 404 — Maternity / Paediatrics Practice</h1>
-        <p>Study Hub · made by Enoch Zhao</p>
+        <h1>Nursing Practice — Study Hub</h1>
+        <p>NCLEX-style practice banks &amp; study games · made by Enoch Zhao</p>
         <p>Check out the repo on <a href="https://github.com/pepenoq/pepenoq.github.io">GitHub</a></p>
       </div>
     </div>
   </div>
 
   <div class="hero">
-    <h2>Welcome — choose where to study</h2>
-    <p><b>Exam 4 — Toddler → Adolescent</b> is the current focus: six NCLEX/HESI-style
-       practice exams (300 questions) with full rationales, featured below. Earlier units
-       and study games — the Infant practice exams, the Toddler Word Scramble, and the
-       Psychopharmacology drug-scramble — are still available further down.</p>
+    <h2>Two courses, two separate question banks</h2>
+    <p><b>NUR 504 — Adult Cardiovascular Critical Care</b> is the current focus and is listed
+       first below. Everything from the earlier <b>NUR 404 — Maternity / Paediatrics</b> unit,
+       including the Exam 4 bank, the Infant exams and the study games, lives in its own
+       section further down. The two banks are entirely separate — separate pages, separate
+       questions, and separate saved progress.</p>
   </div>
 
-  <!-- ===== Featured: current exam ===== -->
-  <section class="featured">
-    <p class="eyebrow">★ Current exam — start here</p>
-    <a class="card exam4 featured-card" href="exam4.html">
-      <span class="standout blue">★ New · Exam 4</span>
-      <div class="icon">🧒</div>
-      <span class="tag exam4tag">Live · 300 questions · 6 exams</span>
-      <h3>Exam 4 — Toddler → Adolescent</h3>
-      <p>Six 50-question NCLEX/HESI-style practice exams across the <b>Toddler, Preschool,
-         School-Age, and Adolescent</b> units — growth &amp; development, safety &amp; poisoning,
-         communicable disease, and system disorders. Includes a <b>cumulative</b> exam and a
-         focused <b>Growth &amp; Development</b> exam spanning every age group. Multiple choice
-         &amp; SATA, written NCLEX-style with genuinely plausible distractors and full rationales.</p>
-      <span class="go">Enter Exam 4 practice →</span>
+  <!-- ================= NUR 504 — CURRENT COURSE ================= -->
+  <section class="course nur504">
+    <div class="course-head">
+      <span class="code">★ Current course</span>
+      <h2>NUR 504 — Adult Cardiovascular Critical Care</h2>
+      <p class="sub">Care and management of the cardiac patient · Weeks 1–3 · Exam 1</p>
+    </div>
+
+    <a class="card nur504card" href="nur504.html">
+      <span class="standout">★ New · 200 questions</span>
+      <div class="icon">&#129728;</div>
+      <span class="tag cardiactag">Live · 200 questions · 4 exams</span>
+      <h3>Exam 1 — Cardiovascular Critical Care</h3>
+      <p>Four 50-question NCLEX-style practice exams built from the Week 1, Week 2 and Week 3
+         lecture decks, pre-class materials and in-class case studies. Written as <b>hard
+         critical-thinking items</b> — multiple choice and select-all-that-apply — with no filler
+         options: every distractor is a real drug, rhythm, value or intervention from an adjacent
+         concept, so you have to know the material to rule it out. Every question carries a full
+         rationale that also explains the trap.</p>
+      <div class="breakdown">
+        <div><b>Exam 1 · Week 1</b>Hemodynamics, MAP &amp; CVP, arterial and PA lines, pressors &amp; inotropes, ECG basics</div>
+        <div><b>Exam 2 · Week 2</b>Sinus, atrial &amp; ventricular rhythms, blocks, antiarrhythmics, pacemakers &amp; AICD</div>
+        <div><b>Exam 3 · Week 2</b>Angina to STEMI, troponins, lead localization, PCI, fibrinolytics, CABG</div>
+        <div><b>Exam 4 · Week 3</b>Valves &amp; murmurs, endo/myo/pericarditis, tamponade, cardiomyopathy, aneurysm</div>
+      </div>
+      <span class="go">Enter NUR 504 practice →</span>
     </a>
   </section>
 
-  <!-- ===== Earlier units &amp; study games (de-emphasised) ===== -->
-  <section class="other-tools">
-    <h3 class="other-heading">Earlier units &amp; study games</h3>
-    <div class="grid secondary">
-    <a class="card psychopharm" href="psychopharm.html">
-      <span class="standout">★ New · Standout</span>
-      <div class="icon">💊</div>
-      <span class="tag psych">Study game · 90+ terms</span>
-      <h3>Psychopharmacology Scramble</h3>
-      <p>Unscramble drug names, classes, neurotransmitters, side effects, and nursing
-         concepts from the NUR 422 <i>Psychopharmacology Review</i> and FA Davis Ch. 4.
-         Clues are written to make you <b>reason it out</b> — mechanism → effect → nursing
-         action — across antidepressants, antipsychotics/EPS, mood stabilizers,
-         anxiolytics, sleep agents, and ADHD drugs.</p>
-      <span class="go">Play the drug scramble →</span>
-    </a>
+  <!-- ================= NUR 404 — EARLIER COURSE ================= -->
+  <section class="course nur404">
+    <div class="course-head">
+      <span class="code">Earlier course</span>
+      <h2>NUR 404 — Maternity / Paediatrics</h2>
+      <p class="sub">Infant through adolescent practice exams and study games · kept here for review</p>
+    </div>
 
-    <a class="card infant" href="infant.html">
-      <div class="icon">🍼</div>
-      <span class="tag live">Live · 345 questions</span>
-      <h3>Infant Practice Exams</h3>
-      <p>Eight exams on the Infant unit — six 50-question mixed exams, a 20-question
-         dosage-calculation test, and a 25-question priority-intervention (ABCs) exam.
-         Multiple choice, SATA, and fill-in-the-blank with full rationales. Progress
-         saves automatically.</p>
-      <span class="go">Enter practice exams →</span>
-    </a>
+    <div class="grid two">
+      <a class="card exam4" href="exam4.html">
+        <div class="icon">🧒</div>
+        <span class="tag exam4tag">Live · 300 questions · 6 exams</span>
+        <h3>Exam 4 — Toddler → Adolescent</h3>
+        <p>Six 50-question NCLEX/HESI-style practice exams across the <b>Toddler, Preschool,
+           School-Age, and Adolescent</b> units — growth &amp; development, safety &amp; poisoning,
+           communicable disease, and system disorders. Includes a <b>cumulative</b> exam and a
+           focused <b>Growth &amp; Development</b> exam spanning every age group.</p>
+        <span class="go">Enter Exam 4 practice →</span>
+      </a>
 
-    <a class="card toddler" href="toddler.html">
-      <div class="icon">🧸</div>
-      <span class="tag soon">Coming soon</span>
-      <h3>Toddler &amp; Beyond Practice Exams</h3>
-      <p>NCLEX/HESI-style practice exams covering the Toddler unit and beyond —
-         growth &amp; development, safety and poisoning, communicable diseases,
-         respiratory and GI disorders, and more. Question banks are being written now.</p>
-      <span class="go">Preview page →</span>
-    </a>
+      <a class="card infant" href="infant.html">
+        <div class="icon">🍼</div>
+        <span class="tag live">Live · 345 questions</span>
+        <h3>Infant Practice Exams</h3>
+        <p>Eight exams on the Infant unit — six 50-question mixed exams, a 20-question
+           dosage-calculation test, and a 25-question priority-intervention (ABCs) exam.
+           Multiple choice, SATA, and fill-in-the-blank with full rationales. Progress
+           saves automatically.</p>
+        <span class="go">Enter practice exams →</span>
+      </a>
+    </div>
 
-    <a class="card scramble" href="scramble.html">
-      <div class="icon">🔤</div>
-      <span class="tag game">Study game</span>
-      <h3>Word Scramble — Toddler Unit</h3>
-      <p>Unscramble key terms from the Week 8 Toddler readings (Pillitteri) and
-         lecture slides — growth &amp; development, safety, infectious disease,
-         respiratory, GI, and renal vocabulary. Each word comes with a textbook-based
-         clue and a definition after you solve it.</p>
-      <span class="go">Play the game →</span>
-    </a>
+    <h3 class="subhead">Study games</h3>
+    <div class="grid">
+      <a class="card psychopharm" href="psychopharm.html">
+        <div class="icon">💊</div>
+        <span class="tag psych">Study game · 90+ terms</span>
+        <h3>Psychopharmacology Scramble</h3>
+        <p>Unscramble drug names, classes, neurotransmitters, side effects, and nursing
+           concepts from the NUR 422 <i>Psychopharmacology Review</i> and FA Davis Ch. 4.
+           Clues are written to make you <b>reason it out</b> — mechanism → effect → nursing
+           action.</p>
+        <span class="go">Play the drug scramble →</span>
+      </a>
+
+      <a class="card scramble" href="scramble.html">
+        <div class="icon">🔤</div>
+        <span class="tag game">Study game</span>
+        <h3>Word Scramble — Toddler Unit</h3>
+        <p>Unscramble key terms from the Week 8 Toddler readings (Pillitteri) and
+           lecture slides — growth &amp; development, safety, infectious disease,
+           respiratory, GI, and renal vocabulary. Each word comes with a textbook-based
+           clue and a definition after you solve it.</p>
+        <span class="go">Play the game →</span>
+      </a>
+
+      <a class="card toddler" href="toddler.html">
+        <div class="icon">🧸</div>
+        <span class="tag soon">Preview page</span>
+        <h3>Toddler &amp; Beyond — Preview</h3>
+        <p>The original placeholder page for the Toddler unit and beyond. The question
+           banks it described are now live in the <b>Exam 4 — Toddler → Adolescent</b>
+           practice exams above.</p>
+        <span class="go">Preview page →</span>
+      </a>
     </div>
   </section>
 
   <p class="disclaimer">Educational practice tools by Enoch Zhao, built from the MCPHS
-     NUR 404 unit source material. Rationales and clues are study aids and should not
-     serve as clinical guidance. Contact your professor for content clarification.</p>
+     NUR 504 and NUR 404 unit source material. Rationales and clues are study aids and should
+     not serve as clinical guidance. Contact your professor for content clarification.</p>
 
 </div>
 </body>
