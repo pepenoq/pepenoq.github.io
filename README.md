@@ -4,10 +4,13 @@ A local, offline web app holding NCLEX/HESI-style practice question banks for mo
 one nursing course. Runs entirely in your web browser on **Windows and macOS** — no
 internet, no installation, no accounts.
 
-Two courses are covered, and they are kept completely separate — separate pages, separate
-questions, and separate saved progress:
+Several courses are covered, and every bank is kept completely separate — separate pages,
+separate questions, and separate saved progress:
 
-- **NUR 504 — Adult Cardiovascular Critical Care** (current) — `nur504.html`
+- **NUR 504 — Adult Critical Care** (current)
+  - Exam 1, cardiovascular — `nur504.html`
+  - Exam 2, respiratory & renal — `nur504e2.html`
+- **NUR 525 — Community & Public Health Nursing** (current) — `nur525.html`
 - **NUR 404 — Maternity / Paediatrics** (earlier) — `exam4.html`, `infant.html`, plus the
   word-scramble study games
 
@@ -41,6 +44,42 @@ questions, and separate saved progress:
   answer is spread evenly across all four multiple-choice positions, and SATA items vary
   between two and five correct options, so neither position nor count gives anything away.
 - **Full rationale** on every question that also explains why the best distractor is wrong.
+
+### NUR 504 — Exam 2, Respiratory & Renal Critical Care (`nur504e2.html`)
+
+- **300 questions** across **six 50-question sets**, built from the Week 4, Week 5 and Week 6
+  lecture decks (slides + speaker notes), the Week 4 study chart, the ABG, ARF/ARDS and
+  mechanical-ventilation key-highlight sheets, the weekly objectives, and the in-class
+  activities and case studies (ARDS, the trauma pneumothorax, the Renal NGN and the
+  Respiratory COVID NGN).
+  - **Set 1 — Week 4:** respiratory assessment and pleural disorders — age-related changes and
+    mental status as the first sign of impaired gas exchange, diagnostics, thoracentesis and
+    crepitus, transudative vs exudative effusion, pleurodesis, and every pneumothorax from
+    simple to tension to open, plus hemothorax, empyema and chylothorax.
+  - **Set 2 — Week 4:** chest tubes — placement by air vs fluid, the three chambers, tidaling
+    and bubbling, locating an air leak, drainage thresholds, petrolatum dressings taped on
+    three sides, never stripping or clamping, and the tube-out and disconnection emergencies.
+  - **Set 3 — Week 4:** ABGs and acid–base — the four-step method and ROME, uncompensated vs
+    partial vs full compensation, the four primary disorders with their causes and
+    interventions, hypoxemia grading, and the potassium and calcium shifts.
+  - **Set 4 — Week 5:** acute respiratory failure, ARDS, pulmonary artery hypertension and
+    COVID-19 — Type I vs II vs combined ARF, refractory hypoxemia as the ARDS hallmark, the
+    three ARDS phases, PEEP and prone positioning, prostanoids, and high-flow nasal cannula.
+  - **Set 5 — Week 5:** intubation, mechanical ventilation, VAP and sedation — placement
+    verification, cuff pressure, DOPE, high vs low pressure alarms, the vent modes and
+    settings, weaning and sedation vacations, the VAP bundle, RASS, ASA, STOP-BANG and RSI.
+  - **Set 6 — Week 6:** renal — CKD staging by GFR, uremia, the ESRD diet, emergent dialysis
+    criteria, fistula vs graft vs catheter and access protection, disequilibrium syndrome,
+    CRRT, the peritoneal exchange and peritonitis, rejection types, and nephrectomy.
+- **224 multiple choice + 76 SATA.** Written to the brief in `questionprompt.txt`: every item
+  is drawn **only** from the uploaded Exam 2 material, and every item sits at the
+  **Application level or higher** — it asks what the nurse should do, not what a term means.
+  There are no filler options; each distractor is a real finding, drug or intervention taken
+  from an adjacent concept in the same material. The correct answer is spread evenly across
+  all four multiple-choice positions (56/56/56/56), and SATA items vary between two and five
+  correct options, so neither position nor count gives anything away.
+- **Full rationale** on every question, stating why the correct answer is right and why the
+  credible distractors are not, and **naming the Bloom's taxonomy level** of the item.
 
 ### NUR 404 — Maternity / Paediatrics
 
