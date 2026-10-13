@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NUR 525 Exam 2 — Community &amp; Public Health Nursing Practice Exams</title>
+<style>
+  :root{
+    --bg:#14100a;
+    --panel:#241c0f;
+    --panel-2:#2f2414;
+    --ink:#f5efe3;
+    --muted:#c6b394;
+    --line:#4a3a1d;
+    --brand:#f0b429;
+    --brand-2:#b9811a;
+    --green:#3ecf8e;
+    --green-bg:#0f3326;
+    --red:#ff7a6b;
+    --red-bg:#3f1512;
+    --amber:#ffd98a;
+    --shadow:0 10px 30px rgba(0,0,0,.45);
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:linear-gradient(180deg,#0d0a06 0%, #14100a 100%);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5;
+    min-height:100vh;
+  }
+  .wrap{max-width:900px;margin:0 auto;padding:24px 18px 60px}
+  a{color:var(--brand)}
+  button{font-family:inherit;cursor:pointer}
+  .hidden{display:none !important}
+
+  /* ---------- Header ---------- */
+  .topbar{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:12px;margin-bottom:22px;flex-wrap:wrap;
+  }
+  .brandmark{display:flex;align-items:center;gap:12px}
+  .logo{
+    width:42px;height:42px;border-radius:12px;flex:0 0 auto;
+    background:radial-gradient(circle at 30% 30%,var(--brand),var(--brand-2));
+    display:grid;place-items:center;font-size:22px;box-shadow:var(--shadow);
+  }
+  .brandmark h1{font-size:1.15rem;margin:0;letter-spacing:.2px}
+  .brandmark p{margin:0;color:var(--muted);font-size:.82rem}
+
+  /* ---------- Landing ---------- */
+  .lead{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px 22px;margin-bottom:22px;box-shadow:var(--shadow);
+  }
+  .lead h2{margin:0 0 6px;font-size:1.35rem}
+  .lead p{margin:0;color:var(--muted);font-size:.95rem}
+  .pill{
+    display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.4px;
+    padding:3px 10px;border-radius:999px;border:1px solid var(--line);
+    color:var(--amber);background:#2a190833;margin-top:12px;
+  }
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  @media (max-width:640px){.grid{grid-template-columns:1fr}}
+  .card{
+    background:linear-gradient(180deg,var(--panel-2),var(--panel));
+    border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px;box-shadow:var(--shadow);
+    display:flex;flex-direction:column;gap:10px;
+    transition:transform .12s ease,border-color .12s ease;
+  }
+  .card:hover{transform:translateY(-3px);border-color:var(--brand)}
+  .card .num{
+    width:38px;height:38px;border-radius:10px;display:grid;place-items:center;
+    font-weight:700;background:#1f180d;border:1px solid var(--line);color:var(--brand)
+  }
+  .card h3{margin:0;font-size:1.1rem}
+  .card .meta{color:var(--muted);font-size:.85rem;margin:0}
+  .card .progress-mini{font-size:.8rem;color:var(--amber)}
+  .card button{
+    margin-top:6px;border:none;border-radius:10px;padding:11px 14px;font-weight:600;
+    background:var(--brand-2);color:white;font-size:.95rem;
+  }
+  .card button:hover{background:var(--brand)}
+  .card .row{display:flex;gap:8px}
+  .card .row button.reset{
+    background:transparent;border:1px solid var(--line);color:var(--muted);flex:0 0 auto;
+  }
+  .card .row button.reset:hover{color:var(--red);border-color:var(--red)}
+  .card .row button.start{flex:1}
+
+  .disclaimer{margin-top:26px;font-size:.78rem;color:var(--muted);
+    border-top:1px solid var(--line);padding-top:16px;white-space:pre-line}
+
+  /* ---------- Quiz ---------- */
+  .quiz-head{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    margin-bottom:14px;flex-wrap:wrap;
+  }
+  .btn-ghost{
+    background:transparent;border:1px solid var(--line);color:var(--ink);
+    border-radius:10px;padding:8px 14px;font-weight:600;font-size:.88rem;
+  }
+  .btn-ghost:hover{border-color:var(--brand);color:var(--brand)}
+  .quiz-title{font-weight:700}
+  .quiz-sub{color:var(--muted);font-size:.85rem}
+
+  .progress-bar{height:8px;background:#1f180d;border-radius:999px;overflow:hidden;
+    border:1px solid var(--line);margin-bottom:18px}
+  .progress-bar > span{display:block;height:100%;background:linear-gradient(90deg,var(--brand-2),var(--brand));width:0%}
+
+  .qcard{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;box-shadow:var(--shadow);
+  }
+  .badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+  .badge{font-size:.72rem;font-weight:700;letter-spacing:.4px;padding:4px 11px;border-radius:999px;text-transform:uppercase}
+  .badge.type-mcq{background:#1d2b3d;color:#a8c6ea;border:1px solid #35537a}
+  .badge.type-sata{background:#4a3a1d;color:#ffd98a;border:1px solid #8a6a22}
+  .badge.type-fill{background:#10303a;color:#7fe0d0;border:1px solid #1d6b5e}
+  .badge.topic{background:#2b2213;color:var(--muted);border:1px solid var(--line)}
+  .sata-hint{color:var(--amber);font-size:.82rem;margin:-6px 0 14px;font-weight:600}
+
+  .stem{font-size:1.08rem;margin:0 0 18px;font-weight:500}
+
+  .options{display:flex;flex-direction:column;gap:10px}
+  .opt{
+    display:flex;gap:12px;align-items:flex-start;
+    border:1px solid var(--line);border-radius:12px;padding:13px 15px;
+    background:#1c1509;cursor:pointer;transition:border-color .1s,background .1s;
+  }
+  .opt:hover{border-color:var(--brand)}
+  .opt input{margin-top:3px;flex:0 0 auto;width:18px;height:18px;accent-color:var(--brand)}
+  .opt .lab{flex:1}
+  .opt.correct{background:var(--green-bg);border-color:var(--green)}
+  .opt.incorrect{background:var(--red-bg);border-color:var(--red)}
+  .opt.missed{border-color:var(--green);border-style:dashed}
+  .opt .mark{font-weight:700;margin-left:auto;flex:0 0 auto}
+  .opt.correct .mark{color:var(--green)}
+  .opt.incorrect .mark{color:var(--red)}
+  .opt.locked{cursor:default}
+  .opt.locked:hover{border-color:var(--line)}
+  .opt.locked.correct:hover{border-color:var(--green)}
+  .opt.locked.incorrect:hover{border-color:var(--red)}
+
+  .fill-group{display:flex;align-items:center;gap:12px;margin-top:4px;flex-wrap:wrap}
+  .fill-input{
+    width:220px;max-width:70%;font-size:1.1rem;font-weight:600;letter-spacing:.3px;
+    padding:13px 15px;border-radius:12px;border:1px solid var(--line);
+    background:#1c1509;color:var(--ink);
+  }
+  .fill-input::placeholder{color:var(--muted);font-weight:400}
+  .fill-input:focus{outline:none;border-color:var(--brand)}
+  .fill-input:disabled{opacity:1}
+  .fill-input.correct{border-color:var(--green);background:var(--green-bg);color:#bff0d0}
+  .fill-input.incorrect{border-color:var(--red);background:var(--red-bg);color:#ffc9c9}
+  .fill-unit{color:var(--muted);font-size:1rem;font-weight:700}
+
+  .rationale{
+    margin-top:18px;border-radius:12px;padding:16px 18px;border:1px solid var(--line);
+    background:#1f180d;
+  }
+  .rationale.correct{border-color:var(--green)}
+  .rationale.incorrect{border-color:var(--red)}
+  .rationale h4{margin:0 0 8px;font-size:.95rem;display:flex;align-items:center;gap:8px}
+  .rationale.correct h4{color:var(--green)}
+  .rationale.incorrect h4{color:var(--red)}
+  .rationale p{margin:0;color:#efe6d6;font-size:.95rem}
+  .rationale .ans{margin-top:10px;font-size:.88rem;color:var(--muted)}
+  .rationale .bloom{
+    margin-top:6px;font-size:.78rem;color:var(--muted);
+    text-transform:uppercase;letter-spacing:.6px;opacity:.85;
+  }
+
+  .actions{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;align-items:center}
+  .btn-primary{
+    background:var(--brand-2);color:white;border:none;border-radius:10px;
+    padding:11px 20px;font-weight:700;font-size:.95rem;
+  }
+  .btn-primary:hover{background:var(--brand)}
+  .btn-primary:disabled{opacity:.4;cursor:not-allowed}
+  .spacer{flex:1}
+
+  /* ---------- Navigator ---------- */
+  .nav-grid{
+    display:grid;grid-template-columns:repeat(10,1fr);gap:7px;margin-top:22px;
+  }
+  @media (max-width:640px){.nav-grid{grid-template-columns:repeat(8,1fr)}}
+  .nav-grid button{
+    aspect-ratio:1/1;border-radius:8px;border:1px solid var(--line);
+    background:#1c1509;color:var(--muted);font-weight:600;font-size:.8rem;padding:0;
+  }
+  .nav-grid button.current{outline:2px solid var(--brand);color:var(--ink)}
+  .nav-grid button.answered{color:var(--ink);border-color:#70364a}
+  .nav-grid button.correct{background:var(--green-bg);border-color:var(--green);color:#bff0d0}
+  .nav-grid button.incorrect{background:var(--red-bg);border-color:var(--red);color:#ffc9c9}
+  .nav-legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;font-size:.76rem;color:var(--muted)}
+  .nav-legend span{display:flex;align-items:center;gap:6px}
+  .dot{width:11px;height:11px;border-radius:3px;display:inline-block;border:1px solid var(--line)}
+  .dot.g{background:var(--green-bg);border-color:var(--green)}
+  .dot.r{background:var(--red-bg);border-color:var(--red)}
+  .dot.n{background:#1c1509}
+
+  /* ---------- Results ---------- */
+  .results{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px;box-shadow:var(--shadow);text-align:center;
+  }
+  .score-ring{font-size:3rem;font-weight:800;margin:6px 0}
+  .score-ring.pass{color:var(--green)}
+  .score-ring.fail{color:var(--amber)}
+  .results .sub{color:var(--muted);margin-bottom:20px}
+  .breakdown{text-align:left;margin:20px 0;display:flex;flex-direction:column;gap:8px}
+  .breakdown .brow{display:flex;justify-content:space-between;font-size:.9rem;
+    border-bottom:1px solid var(--line);padding-bottom:6px}
+  .breakdown .brow .t{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== Header ===== -->
+  <div class="topbar">
+    <div class="brandmark">
+      <div class="logo">&#128300;</div>
+      <div>
+        <h1>NUR 525 Exam 2 — Community &amp; Public Health Nursing</h1>
+        <p>NCLEX-style Question Banks · Health Policy &amp; Insurance · Epidemiology &amp; Surveillance · STIs &amp; Hepatitis · TB &amp; Communicable Disease · made by Enoch Zhao</p>
+        <p><a href="index.html">← Back to home</a> · Check out the repo on <a href="https://github.com/pepenoq/pepenoq.github.io">GitHub</a></p>
+      </div>
+    </div>
+    <button id="homeBtn" class="btn-ghost hidden">← All exams</button>
+  </div>
+
+  <!-- ===== Landing ===== -->
+  <section id="landing">
+    <div class="lead">
+      <h2>Choose a practice exam</h2>
+      <p>Four 25-question sets (100 questions total) covering the whole of NUR 525 Exam 2 —
+         <strong>Week 4</strong>, <strong>Week 5</strong>, and <strong>Week 6</strong>. <br><br>
+         Set 1 is the <strong>US health care system, insurance and policy</strong> — why care here costs
+         what it does, how cost and quality actually relate, the Affordable Care Act, premium versus
+         deductible versus copay versus coinsurance, Medicare Parts A through D and what Medicare will
+         not pay for, Medicaid and the coverage gap, COBRA after a job loss, EMTALA, who faces barriers
+         to care, the funded programs from WIC to CHIP, and how the local, state and federal levels
+         partner. Set 2 is <strong>epidemiology and surveillance</strong> — the epidemiologic triangle and
+         how to break a leg of it, descriptive versus analytic epidemiology, incidence versus prevalence,
+         endemic/epidemic/pandemic, passive versus active versus syndromic surveillance, notifiable and
+         quarantinable disease, vectors, and active versus passive immunity. Set 3 is <strong>sexually
+         transmitted infections and hepatitis</strong> — what a vaccine prevents, what an antibiotic
+         cures and what only an antiviral manages, the HIV window period and PEP, syphilis staging and
+         the conversations it requires, and hepatitis A, B and C. Set 4 is <strong>tuberculosis,
+         foodborne illness and communicable disease control</strong> — latent versus active disease,
+         reading a skin test against the 5, 10 and 15 mm thresholds, the drug regimens and their
+         teaching, directly observed therapy, airborne precautions, and food safety. <br><br>
+         Every item is drawn <strong>only from the Exam 2 material</strong> — the Week 4, 5 and 6
+         objectives and the three <em>Are You Ready?</em> worksheets — and <strong>every objective in
+         those files is represented</strong>. Questions are written as <strong>hard NCLEX
+         critical-thinking</strong> items, multiple choice and select-all-that-apply, with no filler
+         options: each distractor is a real concept, level of prevention, ethical principle, agency or
+         intervention borrowed from an adjacent topic. Each rationale explains why the right answer is
+         right <em>and</em> why the tempting wrong one is not, and names the Bloom’s level. Following the
+         course material, <strong>no question requires any calculation</strong>. Progress saves
+         automatically in your browser.</p>
+      <span class="pill">MULTIPLE CHOICE &amp; SELECT ALL THAT APPLY · RATIONALES + BLOOM’S LEVEL</span>
+    </div>
+    <div class="grid" id="examGrid"><!-- cards injected --></div>
+    <p class="disclaimer" id="disclaimer"></p>
+  </section>
+
+  <!-- ===== Quiz ===== -->
+  <section id="quiz" class="hidden">
+    <div class="quiz-head">
+      <div>
+        <div class="quiz-title" id="qExamName">Practice Exam</div>
+        <div class="quiz-sub" id="qCounter">Question 1 of 25</div>
+      </div>
+      <button id="finishBtn" class="btn-ghost">Finish &amp; score</button>
+    </div>
+    <div class="progress-bar"><span id="progressFill"></span></div>
+
+    <div class="qcard">
+      <div class="badges" id="qBadges"></div>
+      <div class="sata-hint hidden" id="sataHint">✔ Select ALL that apply — there may be more than one correct answer.</div>
+      <p class="stem" id="qStem"></p>
+      <div class="options" id="qOptions"></div>
+
+      <div class="rationale hidden" id="qRationale"></div>
+
+      <div class="actions">
+        <button class="btn-ghost" id="prevBtn">← Previous</button>
+        <button class="btn-primary" id="submitBtn">Submit answer</button>
+        <div class="spacer"></div>
+        <button class="btn-primary" id="nextBtn">Next →</button>
+      </div>
+    </div>
+
+    <div class="nav-grid" id="navGrid"></div>
+    <div class="nav-legend">
+      <span><i class="dot n"></i> Unanswered</span>
+      <span><i class="dot g"></i> Correct</span>
+      <span><i class="dot r"></i> Incorrect</span>
+    </div>
+  </section>
+
+  <!-- ===== Results ===== -->
+  <section id="results" class="hidden">
+    <div class="results">
+      <div class="quiz-sub" id="rExamName">Practice Exam</div>
+      <div class="score-ring" id="rScore">0%</div>
+      <div class="sub" id="rSummary"></div>
+      <div class="breakdown" id="rBreakdown"></div>
+      <div class="actions" style="justify-content:center">
+        <button class="btn-ghost" id="rReviewBtn">Review questions</button>
+        <button class="btn-primary" id="rHomeBtn">Back to all exams</button>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script src="nur525e2-questions.js"></script>
+<script src="nur525e2-app.js"></script>
+</body>
+</html>
