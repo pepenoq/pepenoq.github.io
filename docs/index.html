@@ -33,6 +33,10 @@
     --epi:#f0b429;
     --epi-2:#b9811a;
     --epi-line:#4a3a1d;
+    /* HESI Exit comprehensive review accent */
+    --hesi:#a78bfa;
+    --hesi-2:#7c5cd6;
+    --hesi-line:#3a2d5c;
     --shadow:0 10px 30px rgba(0,0,0,.35);
     --radius:14px;
   }
@@ -291,6 +295,42 @@
   .breakdown div b{display:block;color:#ffb3c0;font-size:.72rem;letter-spacing:.4px;
     text-transform:uppercase;margin-bottom:3px}
 
+  /* ---------- HESI Exit exam prep (full-width section) ---------- */
+  .course.hesi .course-head{border-bottom-color:var(--hesi-line)}
+  .course.hesi .course-head .code{
+    color:#f3eeff;background:linear-gradient(90deg,var(--hesi-2),var(--hesi));
+    box-shadow:0 4px 16px rgba(124,92,214,.45);
+  }
+  .card.hesicard{
+    position:relative;
+    border-color:var(--hesi-2);
+    background:linear-gradient(180deg,#261c45,#160f2a);
+    box-shadow:0 14px 38px rgba(124,92,214,.30), var(--shadow);
+    padding:30px 30px 26px;
+  }
+  a.card.hesicard:hover{border-color:var(--hesi);transform:translateY(-5px)}
+  .card.hesicard .icon{
+    width:60px;height:60px;font-size:34px;border-radius:16px;
+    border-color:var(--hesi-2);background:#34235f;
+  }
+  .card.hesicard h3{font-size:1.5rem}
+  .card.hesicard p{font-size:.95rem;max-width:90ch}
+  .card.hesicard .go{background:var(--hesi-2);align-self:flex-start;padding:12px 22px}
+  a.card.hesicard:hover .go{background:var(--hesi)}
+  .tag.hesitag{color:#d9ccff;border-color:var(--hesi-2);background:#2c1f5266}
+  .standout.violet{
+    color:#f6f2ff;background:linear-gradient(90deg,var(--hesi-2),var(--hesi));
+    animation:pulseGlowViolet 2.2s ease-in-out infinite;
+  }
+  @keyframes pulseGlowViolet{
+    0%,100%{box-shadow:0 4px 16px rgba(124,92,214,.5)}
+    50%{box-shadow:0 4px 26px rgba(167,139,250,.95)}
+  }
+  .breakdown.violet{grid-template-columns:repeat(3,1fr)}
+  @media (max-width:720px){.breakdown.violet{grid-template-columns:1fr}}
+  .breakdown.violet div{border-color:var(--hesi-line);background:#1f1638;color:#e6defa;min-width:0;overflow-wrap:anywhere}
+  .breakdown.violet div b{color:#d9ccff}
+
   /* ---------- NUR 404 de-emphasised ---------- */
   .course.nur404 .grid .card{
     opacity:.62;filter:saturate(.7);
@@ -330,7 +370,9 @@
        entirely separate — separate pages, separate questions, and separate saved progress, so
        nothing is shared between them.
        Everything from the earlier <b>NUR 404 — Maternity / Paediatrics</b> unit, including the
-       Exam 4 bank, the Infant exams and the study games, lives in its own section further down.</p>
+       Exam 4 bank, the Infant exams and the study games, lives in its own section further down.
+       New: a separate <b>HESI Exit</b> comprehensive review bank — six 130-question exams — sits
+       just below the current courses.</p>
   </div>
 
   <!-- ============ CURRENT COURSES — side by side, separate banks ============ -->
@@ -441,6 +483,34 @@
 
   </div>
 
+  <!-- ================= HESI EXIT — COMPREHENSIVE REVIEW ================= -->
+  <section class="course hesi">
+    <div class="course-head">
+      <span class="code">★ Exam prep</span>
+      <h2>HESI Exit Exam Prep</h2>
+      <p class="sub">Comprehensive NCLEX/HESI review · every content area · 780 questions</p>
+    </div>
+
+    <a class="card hesicard" href="hesi.html">
+      <span class="standout violet">★ New · 780 questions</span>
+      <div class="icon">&#129658;</div>
+      <span class="tag hesitag">Live · 780 questions · 6 exams</span>
+      <h3>HESI Exit — Comprehensive Practice Exams</h3>
+      <p>Six 130-question comprehensive exams built from the HESI Exit study set. Each exam mixes
+         pediatrics, maternity, the medical-surgical systems, mental health, pharmacology and
+         dosage calculation, fundamentals and leadership, the way the real exit exam does. Every
+         stem and keyed answer comes from the study set. Where a card gave only the answer, the
+         other choices are same-topic NCLEX-style distractors, and every question carries a
+         rationale and its NCLEX client-need category.</p>
+      <div class="breakdown violet">
+        <div><b>Exams 1–6</b>130 questions each, balanced across all 14 content areas</div>
+        <div><b>Formats</b>Multiple choice, select-all-that-apply, numeric dosage calculation</div>
+        <div><b>Feedback</b>Rationales for the key and the distractors, plus scoring by topic</div>
+      </div>
+      <span class="go">Enter HESI Exit practice →</span>
+    </a>
+  </section>
+
   <!-- ================= NUR 404 — EARLIER COURSE ================= -->
   <section class="course nur404">
     <div class="course-head">
@@ -510,7 +580,7 @@
   </section>
 
   <p class="disclaimer">Educational practice tools by Enoch Zhao, built from the MCPHS
-     NUR 525, NUR 504 and NUR 404 unit source material. Rationales and clues are study aids and
+     NUR 525, NUR 504 and NUR 404 unit source material and the HESI Exit study set. Rationales and clues are study aids and
      should not serve as clinical guidance. Contact your professor for content clarification.</p>
 
 </div>

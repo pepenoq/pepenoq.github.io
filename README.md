@@ -11,6 +11,7 @@ separate questions, and separate saved progress:
   - Exam 1, cardiovascular — `nur504.html`
   - Exam 2, respiratory & renal — `nur504e2.html`
 - **NUR 525 — Community & Public Health Nursing** (current) — `nur525.html`
+- **HESI Exit Exam Prep** — comprehensive review, `hesi.html`
 - **NUR 404 — Maternity / Paediatrics** (earlier) — `exam4.html`, `infant.html`, plus the
   word-scramble study games
 
@@ -80,6 +81,37 @@ separate questions, and separate saved progress:
   correct options, so neither position nor count gives anything away.
 - **Full rationale** on every question, stating why the correct answer is right and why the
   credible distractors are not, and **naming the Bloom's taxonomy level** of the item.
+
+### HESI Exit Exam Prep (`hesi.html`)
+
+- **780 questions** in **six 130-question comprehensive exams**, built from the HESI Exit study
+  set (`HESI_ExitPrep/quizletquestions.txt`, 839 cards → 796 after removing duplicate cards).
+  Like the real HESI Exit, each exam **mixes every content area**: Pediatrics, Maternity &
+  Newborn, Cardiovascular, Respiratory, Neuro & Sensory, Endocrine, GI & Nutrition, Renal & GU,
+  Musculoskeletal & Integumentary, Hematology/Oncology/Immunology, Mental Health, Pharmacology &
+  Calculations, Fundamentals & Safety, and Leadership & Prioritization. Items are dealt evenly
+  across the six exams by topic.
+- **Every stem and keyed answer comes from the study set.** Stems were cleaned up (typos fixed,
+  truncated "…" cards repaired with the smallest reconstruction consistent with the key).
+  Picture, hotspot, audio and video cards were rewritten so they work as text, and "arrange in
+  order" cards became four-sequence multiple choice.
+- **Distractors:** where a card gave only the correct answer, the other options were written as
+  same-topic distractors following NCLEX/HESI item-writing rules. They are plausible, parallel in
+  length and grammar, mutually exclusive, and there is no "all/none of the above". Given options
+  were kept, except where one was a second defensible answer, in which case it was replaced.
+- **Formats:** multiple choice (key spread evenly across A–D in every exam), select-all-that-apply
+  (key order shuffled), and numeric fill-in dosage calculations (graded to the stated rounding).
+- **Rationale on every item** explaining why the key is right and why the distractors are wrong,
+  tagged with its **NCLEX client-need category**. Results are broken down by topic.
+- **Verification.** Every item was checked against current evidence-based practice. Source keys
+  that were clearly wrong were corrected, and the rationale explains the correct answer:
+  partial thyroidectomy (#15), sepsis fluid-bolus endpoint = MAP (#129), Uhthoff's phenomenon
+  (#170), adrenal crisis after stopping steroids (#255), endometriosis/oral contraceptives (#311),
+  methotrexate divided dose = 2.5 mg (#529), thigh BP auscultated at the popliteal artery (#561),
+  prolonged PR interval = delayed AV conduction (#672), MS exacerbation teaching (#737) and
+  post-MI snacks (#760). Sixteen cards were left out because they were duplicates or their keys
+  could not be defended (for example, overflow incontinence keyed with a functional-incontinence
+  answer). Card numbers refer to the order of cards in the source file.
 
 ### NUR 404 — Maternity / Paediatrics
 
