@@ -40,6 +40,10 @@
     --vuln:#e879f9;
     --vuln-2:#a21caf;
     --vuln-line:#53235c;
+    /* NUR 504 Exam 4 neuro / endocrine / MSK accent */
+    --lime:#a3e635;
+    --lime-2:#4d7c0f;
+    --lime-line:#3a4f1c;
     /* HESI Exit comprehensive review accent */
     --hesi:#a78bfa;
     --hesi-2:#7c5cd6;
@@ -351,6 +355,37 @@
   @media (max-width:720px){.breakdown.fuchsia{grid-template-columns:repeat(2,1fr)}}
   .breakdown.fuchsia div{border-color:var(--vuln-line);background:#2d1031;color:#f1dcf4}
   .breakdown.fuchsia div b{color:#f3bcfb}
+
+  /* ---------- Featured NUR 504 Exam 4 (neuro / endocrine / MSK) card ---------- */
+  .card.nur504e4card{
+    position:relative;
+    border-color:var(--lime-2);
+    background:linear-gradient(180deg,#1f2c0e,#111806);
+    box-shadow:0 14px 38px rgba(77,124,15,.32), var(--shadow);
+    padding:30px 30px 26px;
+  }
+  a.card.nur504e4card:hover{border-color:var(--lime);transform:translateY(-5px)}
+  .card.nur504e4card .icon{
+    width:60px;height:60px;font-size:34px;border-radius:16px;
+    border-color:var(--lime-2);background:#2a3c10;
+  }
+  .card.nur504e4card h3{font-size:1.5rem}
+  .card.nur504e4card p{font-size:.95rem;max-width:74ch}
+  .card.nur504e4card .go{background:var(--lime-2);align-self:flex-start;padding:12px 22px}
+  a.card.nur504e4card:hover .go{background:#3f6212}
+  .tag.limetag{color:#d9f99d;border-color:var(--lime-2);background:#2a3c1066}
+  .standout.lime{
+    color:#f7fee7;background:linear-gradient(90deg,var(--lime-2),#65a30d);
+    animation:pulseGlowLime 2.2s ease-in-out infinite;
+  }
+  @keyframes pulseGlowLime{
+    0%,100%{box-shadow:0 4px 16px rgba(77,124,15,.55)}
+    50%{box-shadow:0 4px 26px rgba(163,230,53,.9)}
+  }
+  .breakdown.lime{grid-template-columns:repeat(3,1fr)}
+  @media (max-width:720px){.breakdown.lime{grid-template-columns:repeat(2,1fr)}}
+  .breakdown.lime div{border-color:var(--lime-line);background:#18220c;color:#e4efd2}
+  .breakdown.lime div b{color:#d9f99d}
   .breakdown{
     display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:6px;
   }
@@ -428,13 +463,14 @@
   </div>
 
   <div class="hero">
-    <h2>Two current courses, six separate question banks</h2>
+    <h2>Two current courses, seven separate question banks</h2>
     <p>The two current courses are side by side below. <b>NUR 525 — Community &amp; Public
        Health Nursing</b> has <b>three independent banks</b>: Exam 1 for the foundations, environment
        and culture weeks, Exam 2 for health policy, epidemiology and communicable disease, and
        Exam 3 for vulnerable populations, community practice settings and disaster management.
-       <b>NUR 504 — Adult Critical Care</b> has <b>three</b>: Exam 1 for the cardiovascular weeks,
-       Exam 2 for the respiratory and renal weeks, and Exam 3 for burns, shock and sepsis. All six
+       <b>NUR 504 — Adult Critical Care</b> has <b>four</b>: Exam 1 for the cardiovascular weeks,
+       Exam 2 for the respiratory and renal weeks, Exam 3 for burns, shock and sepsis, and Exam 4 for
+       the neuro, endocrine and musculoskeletal weeks. All seven
        banks are entirely separate — separate pages, separate questions, and separate saved
        progress, so nothing is shared between them.
        Everything from the earlier <b>NUR 404 — Maternity / Paediatrics</b> unit, including the
@@ -526,7 +562,7 @@
       <div class="course-head">
         <span class="code">★ Current course</span>
         <h2>NUR 504 — Adult Critical Care</h2>
-        <p class="sub">Cardiac · Respiratory · Renal · Burns · Shock · Weeks 1–8 · Exams 1–3 · 600 questions</p>
+        <p class="sub">Cardiac · Respiratory · Renal · Burns · Shock · Neuro · Endocrine · MSK · Weeks 1–11 · Exams 1–4 · 900 questions</p>
       </div>
 
       <a class="card nur504card" href="nur504.html">
@@ -593,6 +629,31 @@
           <div><b>Set 4 · Week 8</b>SIRS &amp; sepsis, hour-1 bundle, MODS, DIC, norepinephrine, vasopressin, dobutamine</div>
         </div>
         <span class="go">Enter Exam 3 practice →</span>
+      </a>
+
+      <a class="card nur504e4card" href="nur504e4.html">
+        <span class="standout lime">★ New · 300 questions</span>
+        <div class="icon">&#129504;</div>
+        <span class="tag limetag">Live · 300 questions · 6 sets</span>
+        <h3>Exam 4 — Neuro, Endocrine &amp; MSK Trauma</h3>
+        <p>Six 50-question NCLEX-style sets built from the Week 9, 10 and 11 lecture decks and their
+           speaker notes, the Iggy study guides and answer keys, the CPP and mannitol/3% saline math
+           worksheets, the DKA, SIADH, HHS, compartment syndrome and neurogenic vs spinal shock
+           activities, and the instructor’s Exam 4 practice questions. Every set is heavy on
+           <b>priority questions</b> (“which client first?”) and on <b>reading lab values</b>, with the
+           instructor’s CPP, mannitol and insulin calculation formats. Following the course question
+           prompt, every item is <b>Application level or higher</b> and uses <b>nothing outside the
+           uploaded material</b>. Ten <b>case-study chains</b> follow one patient across several questions,
+           and each rationale explains the answer <i>and</i> <b>why every wrong option is wrong</b>.</p>
+        <div class="breakdown lime">
+          <div><b>Set 1 · Week 9</b>TBI &amp; GCS, CSF leak, Cushing’s triad, ICP care, CPP math, mannitol &amp; 3% saline</div>
+          <div><b>Set 2 · Week 9</b>SCI, spinal vs neurogenic shock, autonomic dysreflexia, halo, Guillain-Barré</div>
+          <div><b>Set 3 · Week 10</b>Diabetes review, insulin timing, hypoglycemia, sick days, HHS</div>
+          <div><b>Set 4 · Week 10</b>DKA: ABGs &amp; anion gap, ketones, potassium, insulin drip, dextrose, cerebral edema</div>
+          <div><b>Set 5 · Week 10</b>DI vs SIADH: sodium &amp; osmolality, desmopressin, 3% saline, the speed limit</div>
+          <div><b>Set 6 · Week 11</b>Traction, fixation &amp; pin care, casts, fat vs clot embolism, compartment syndrome</div>
+        </div>
+        <span class="go">Enter Exam 4 practice →</span>
       </a>
     </section>
 
